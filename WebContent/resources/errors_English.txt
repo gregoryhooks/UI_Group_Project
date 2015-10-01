@@ -1,0 +1,3 @@
+EMAIL_INVALID Your email is invalid
+USER_NAME_EMPTY Your user name can not be empty or only contain white space
+USER_NAME_HAS_INVALID_CHARS Your user name can only contain letters, numbers, dashes and underscores
