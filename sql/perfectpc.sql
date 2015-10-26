@@ -10,6 +10,9 @@
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
+DROP DATABASE if EXISTS perfectpc;
+CREATE DATABASE perfectpc;
+USE perfectpc;
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -259,7 +262,7 @@ INSERT INTO `psupplies` (`psupplyId`, `Make`, `Model`, `Watts`, `price`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `users` (
-  `userID` varchar(8) NOT NULL,
+  `userID` int(11) NOT NULL AUTO_INCREMENT UNIQUE,
   `username` varchar(16) NOT NULL,
   `password` varchar(16) NOT NULL,
   `email` varchar(64) NOT NULL
@@ -270,10 +273,10 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`userID`, `username`, `password`, `email`) VALUES
-('u000', 'greg', 'hash123', 'greg@email.com'),
-('u001', 'eric', 'hash123', 'eric@gmail.com'),
-('u002', 'heather', 'hash123', 'heather@email.com'),
-('u003', 'travis', 'hash123', 'travis@email.com');
+('1', 'greg', 'hash123', 'greg@email.com'),
+('2', 'eric', 'hash123', 'eric@gmail.com'),
+('3', 'heather', 'hash123', 'heather@email.com'),
+('4', 'travis', 'hash123', 'travis@email.com');
 
 -- --------------------------------------------------------
 
@@ -282,8 +285,9 @@ INSERT INTO `users` (`userID`, `username`, `password`, `email`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `usersaves` (
-  `userID` varchar(255) NOT NULL,
-  `partID` varchar(255) NOT NULL
+  `userID` int(11) NOT NULL,
+  `partID` varchar(255) NOT NULL,
+  FOREIGN KEY (userID) REFERENCES users(userID)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --

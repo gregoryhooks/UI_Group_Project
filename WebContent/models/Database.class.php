@@ -8,12 +8,14 @@ class Database {
 	private static $options = 
 	   array (PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION);
 	
-	public static function getDB($dbName = 'classbash', 
-			                     $configPath ="..". DIRECTORY_SEPARATOR. ".." . DIRECTORY_SEPARATOR.
-			                                   ".." . DIRECTORY_SEPARATOR . "myConfig.ini") {
-		if (! isset ( self::$db )) {
+	public static function getDB($dbName = 'perfectpc', $configPath = null) {
+		
+		if (!isset (self::$db) || self::$db == null) {
 			try {
-				$thePath = dirname(__FILE__).DIRECTORY_SEPARATOR.$configPath;
+				if ($configPath == null)
+			   	    $configPath = dirname(__FILE__).DIRECTORY_SEPARATOR."..". 
+				             DIRECTORY_SEPARATOR. ".." . DIRECTORY_SEPARATOR.
+					           ".." . DIRECTORY_SEPARATOR . "myConfig.ini";
 				$passArray = parse_ini_file($configPath);
 				$username = $passArray["username"];
 				$password = $passArray["password"];
@@ -21,10 +23,15 @@ class Database {
 				$dbspec = self::$dsn.self::$dbName.";charset=utf8";
 				self::$db = new PDO ($dbspec, $username, $password, self::$options);
 			} catch ( PDOException $e ) {
+				self::$db = null;
 				echo "Failed to open connection to ".self::$dbName. $e->getMessage();
 			}
 		}
 		return self::$db;
+	}
+	
+	public static function clearDB() {
+		self::$db = null;
 	}
 }
 ?>

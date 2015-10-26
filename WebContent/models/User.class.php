@@ -3,7 +3,10 @@ class User {
 	private $errorCount;
 	private $errors;
 	private $formInput;
-	private $userName;
+	private $username;
+	private $password;
+	private $userId;
+	public $email;
 	
 	public function __construct($formInput = null) {
 		$this->formInput = $formInput;
@@ -33,17 +36,34 @@ class User {
 	}
 
 	public function getUserName() {
-		return $this->userName;
+		return $this->username;
+	}
+	
+	public function getPassword() {
+		return $this->password;
+	}
+	
+	public function getUserId() {
+		return $this->userId;
+	}
+	
+	public function getEmail() {
+		return $this->email;
 	}
 	
 	public function getParameters() {
 		// Return data fields as an associative array
-		$paramArray = array("userName" => $this->userName); 
+		$paramArray = array("username" => $this->username, "password" => $this->password); 
 		return $paramArray;
+	}
+	
+	public function setUserId($id) {
+		// Set the value of the userId to $id
+		$this->userId = $id;
 	}
 
 	public function __toString() {
-		$str = "User name: ".$this->userName;
+		$str = "User name: ".$this->username." Password: ".$this->password;
 		return $str;
 	}
 	
@@ -65,24 +85,43 @@ class User {
 			$this->initializeEmpty();
 		else  	 
 		   $this->validateUserName();
+		   $this->validatePassword();
+		   $this->validateEmail();
 	}
 
 	private function initializeEmpty() {
 		$this->errorCount = 0;
 		$errors = array();
-	 	$this->userName = "";
+	 	$this->username = "";
+	 	$this->password = "";
+	 	$this->email = "";
 	}
 
 	private function validateUserName() {
 		// Username should only contain letters, numbers, dashes and underscore
-		$this->userName = $this->extractForm('userName');
-		if (empty($this->userName))
-			$this->setError('userName', 'USER_NAME_EMPTY');
-		elseif (!filter_var($this->userName, FILTER_VALIDATE_REGEXP,
+		$this->username = $this->extractForm('username');
+		if (empty($this->username))
+			$this->setError('username', 'USER_NAME_EMPTY');
+		elseif (!filter_var($this->username, FILTER_VALIDATE_REGEXP,
 			array("options"=>array("regexp" =>"/^([a-zA-Z0-9\-\_])+$/i")) )) {
-			$this->setError('userName', 'USER_NAME_HAS_INVALID_CHARS');
+			$this->setError('username', 'USER_NAME_HAS_INVALID_CHARS');
 			$this->errorCount ++;
 		}
-	}	
+	}
+	
+	private function validatePassword() {
+		// Password should not be blank
+		$this->password = $this->extractForm('password');
+		if (empty($this->password))
+			$this->setError('password', 'PASSWORD_EMPTY');
+	}
+	
+	private function validateEmail() {
+		// Email should not have quoted characters
+		$this->email = $this->extractForm('email');
+		if (!filter_var($this->email, FILTER_VALIDATE_EMAIL)) {
+			$this->setError('email', 'EMAIL_INVALID');
+		}
+	}
 }
 ?>
