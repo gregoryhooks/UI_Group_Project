@@ -17,12 +17,14 @@ class homeView {
   	
   	//Title Thing
   	echo '<div class="jumbotron">';
-    echo '<div class="container">';
-    echo '<h1>PerfectPC</h1>';
-  	echo '<p>The place where you can find the Perfect PC</p>';
-	echo '<p><a class="btn btn-primary btn-lg" href="/'.$base.'/questions" role="button">Get Started! &raquo;</a></p>';
-      echo '</div>';
-      echo '</div>';
+    	echo '<div class="container">';
+    		echo '<div class="row">';
+    			echo '<p><img src ="/'.$base.'/images/Logo.png"></p>';
+  				echo '<p>The place where you can find the Perfect PC</p>';
+				echo '<p><a class="btn btn-primary btn-lg" href="/'.$base.'/questions" role="button">Get Started! &raquo;</a></p>';
+      		echo '</div>';
+	  	echo '</div>';
+    echo '</div>';
 	//Bottom Container
 	echo '<div class="container">';
 	echo '<div class="row">';
