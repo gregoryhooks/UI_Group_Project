@@ -91,12 +91,13 @@ class questions {
 		echo 'What color case would you like?<br><br>';
 	
 		echo '<form method="Post" action="/'.$base.'/questions/makePC">';
-		echo '<input type ="radio" name="caseColor" value="c1"> Not important<br>';
+		echo '<input type ="radio" name="caseColor" value="c1"> White<br>';
 		echo '<input type ="radio" name="caseColor" value="c2"> Black<br>';
 		echo '<input type ="radio" name="caseColor" value="c3"> Black/Blue<br>';
 		echo '<input type ="radio" name="caseColor" value="c4"> Black/Red<br>';
 		echo '<input type ="radio" name="caseColor" value="c5"> Orange<br>';
 		echo '<input type ="radio" name="caseColor" value="c6"> Green<br><br>';
+		echo '<input type ="radio" name="caseColor" value="c7"> Not Important<br><br>';
 		echo '<div><input type="submit" value="Finish" /></div>';
 		echo '</form>';
 	}
