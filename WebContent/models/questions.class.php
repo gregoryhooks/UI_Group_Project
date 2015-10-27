@@ -1,6 +1,8 @@
 <?php
 class questions {
 
+	
+	
 	public static function qheader(){
 		echo "<h2><br>Please answer all the questions to find out which computer is right for you.</h2><br>";
 	}
@@ -9,7 +11,7 @@ class questions {
 		echo 'What is your max budget<br><br>';
 		
 		echo '<form method="Post" action="/'.$base.'/questions/question2">';
-		echo '<input type ="radio" name="budget" value="b1"> $500<br>';
+		echo '<input type ="radio" name="budget" value="b1" checked> $500<br>';
 		echo '<input type ="radio" name="budget" value="b2"> $750<br>';
 		echo '<input type ="radio" name="budget" value="b3"> $1000<br>';
 		echo '<input type ="radio" name="budget" value="b4"> $1250<br>';
@@ -26,12 +28,12 @@ class questions {
 		echo 'What is your primary use?<br><br>';
 		
 		echo '<form method="Post" action="/'.$base.'/questions/question3">';
-		echo '<input type ="radio" name="use" value="game"> Gaming<br>';
-		echo '<input type ="radio" name="use" value="internet"> Internet/Email<br>';
-		echo '<input type ="radio" name="use" value="torrent"> Download/torrent<br>';
-		echo '<input type ="radio" name="use" value="office"> Office use<br>';
-		echo '<input type ="radio" name="use" value="coding"> Coding/devolping<br>';
-		echo '<input type ="radio" name="use" value="stream"> Videos/music/streaming<br><br>';
+		echo '<input type ="radio" name="purpose" value="game" checked> Gaming<br>';
+		echo '<input type ="radio" name="purpose" value="internet"> Internet/Email<br>';
+		echo '<input type ="radio" name="purpose" value="torrent"> Download/torrent<br>';
+		echo '<input type ="radio" name="purpose" value="office"> Office use<br>';
+		echo '<input type ="radio" name="purpose" value="coding"> Coding/devolping<br>';
+		echo '<input type ="radio" name="purpose" value="stream"> Videos/music/streaming<br><br>';
 		echo '<div><input type="submit" value="Next" /></div>';	
 		echo '</form>';		
 	}
@@ -42,7 +44,7 @@ class questions {
 		echo 'What games do you plan on playing?<br><br>';
 	
 		echo '<form method="Post" action="/'.$base.'/questions/question4">';
-		echo '<input type ="radio" name="game" value="g1"> None or flash games online like farmville<br>';
+		echo '<input type ="radio" name="game" value="g1" checked> None or flash games online like farmville<br>';
 		echo '<input type ="radio" name="game" value="g2"> Older games like ARMA 2 and Counter-Strike<br>';
 		echo '<input type ="radio" name="game" value="g3"> Low graphic intesive newer games like WOW<br>';
 		echo '<input type ="radio" name="game" value="g4"> Newer games with medium graphics on medium settings<br>';
@@ -58,7 +60,7 @@ class questions {
 		echo 'Do you plan on storing a lot of content?<br><br>';
 		
 		echo '<form method="Post" action="/'.$base.'/questions/question5">';
-		echo '<input type ="radio" name="storage" value="h1"> Only pictures and documents<br>';
+		echo '<input type ="radio" name="storage" value="h1" checked> Only pictures and documents<br>';
 		echo '<input type ="radio" name="storage" value="h2"> A little bit of music occasionally<br>';
 		echo '<input type ="radio" name="storage" value="h3"> A lot of music and documents<br>';
 		echo '<input type ="radio" name="storage" value="h4"> Some games, videos and music<br>';
@@ -74,7 +76,7 @@ class questions {
 		echo 'How many programs do you run at a time?<br><br>';
 	
 		echo '<form method="Post" action="/'.$base.'/questions/question6">';
-		echo '<input type ="radio" name="mem" value="m1"> You can run more than one?!<br>';
+		echo '<input type ="radio" name="mem" value="m1" checked> You can run more than one?!<br>';
 		echo '<input type ="radio" name="mem" value="m2"> Browse the internet while using documetns<br>';
 		echo '<input type ="radio" name="mem" value="m3"> Musics going, internets up, editing photos<br>';
 		echo '<input type ="radio" name="mem" value="m4"> I never shut down programs, like a should...I am sorry<br>';
@@ -89,12 +91,13 @@ class questions {
 		echo 'What color case would you like?<br><br>';
 	
 		echo '<form method="Post" action="/'.$base.'/questions/makePC">';
-		echo '<input type ="radio" name="case" value="c1"> Not important<br>';
-		echo '<input type ="radio" name="case" value="c2"> Black<br>';
-		echo '<input type ="radio" name="case" value="c3"> Black/Blue<br>';
-		echo '<input type ="radio" name="case" value="c4"> Black/Red<br>';
-		echo '<input type ="radio" name="case" value="c5"> Orange<br>';
-		echo '<input type ="radio" name="case" value="c6"> Green<br><br>';
+		echo '<input type ="radio" name="caseColor" value="c1" checked> White<br>';
+		echo '<input type ="radio" name="caseColor" value="c2"> Black<br>';
+		echo '<input type ="radio" name="caseColor" value="c3"> Black/Blue<br>';
+		echo '<input type ="radio" name="caseColor" value="c4"> Black/Red<br>';
+		echo '<input type ="radio" name="caseColor" value="c5"> Orange<br>';
+		echo '<input type ="radio" name="caseColor" value="c6"> Green<br><br>';
+		echo '<input type ="radio" name="caseColor" value="c7"> Not Important<br><br>';
 		echo '<div><input type="submit" value="Finish" /></div>';
 		echo '</form>';
 	}
