@@ -97,6 +97,7 @@ class QuestionsController {
 				MasterView::showNavbar();
 				echo '<div class="jumbotron">';
 					echo '<div class="container">';
+					echo '<br><br><br>';
 					if(strcmp($answers->setCasecolor($_POST['caseColor']), "c7") == 0)
 						$answers->setCasecolor(NULL);
 					Echo "Your computer is: " . $answers->getBudget() ." ". $answers->getPurpose() ." ". $answers->getGame() ." ". $answers->getStorage() ." ". $answers->getMem() ." ". $answers->getCasecolor();
