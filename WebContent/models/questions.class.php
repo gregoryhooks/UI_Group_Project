@@ -1,6 +1,8 @@
 <?php
 class questions {
 
+	
+	
 	public static function qheader(){
 		echo "<h2><br>Please answer all the questions to find out which computer is right for you.</h2><br>";
 	}
@@ -26,12 +28,12 @@ class questions {
 		echo 'What is your primary use?<br><br>';
 		
 		echo '<form method="Post" action="/'.$base.'/questions/question3">';
-		echo '<input type ="radio" name="use" value="game"> Gaming<br>';
-		echo '<input type ="radio" name="use" value="internet"> Internet/Email<br>';
-		echo '<input type ="radio" name="use" value="torrent"> Download/torrent<br>';
-		echo '<input type ="radio" name="use" value="office"> Office use<br>';
-		echo '<input type ="radio" name="use" value="coding"> Coding/devolping<br>';
-		echo '<input type ="radio" name="use" value="stream"> Videos/music/streaming<br><br>';
+		echo '<input type ="radio" name="purpose" value="game"> Gaming<br>';
+		echo '<input type ="radio" name="purpose" value="internet"> Internet/Email<br>';
+		echo '<input type ="radio" name="purpose" value="torrent"> Download/torrent<br>';
+		echo '<input type ="radio" name="purpose" value="office"> Office use<br>';
+		echo '<input type ="radio" name="purpose" value="coding"> Coding/devolping<br>';
+		echo '<input type ="radio" name="purpose" value="stream"> Videos/music/streaming<br><br>';
 		echo '<div><input type="submit" value="Next" /></div>';	
 		echo '</form>';		
 	}
@@ -89,12 +91,12 @@ class questions {
 		echo 'What color case would you like?<br><br>';
 	
 		echo '<form method="Post" action="/'.$base.'/questions/makePC">';
-		echo '<input type ="radio" name="case" value="c1"> Not important<br>';
-		echo '<input type ="radio" name="case" value="c2"> Black<br>';
-		echo '<input type ="radio" name="case" value="c3"> Black/Blue<br>';
-		echo '<input type ="radio" name="case" value="c4"> Black/Red<br>';
-		echo '<input type ="radio" name="case" value="c5"> Orange<br>';
-		echo '<input type ="radio" name="case" value="c6"> Green<br><br>';
+		echo '<input type ="radio" name="caseColor" value="c1"> Not important<br>';
+		echo '<input type ="radio" name="caseColor" value="c2"> Black<br>';
+		echo '<input type ="radio" name="caseColor" value="c3"> Black/Blue<br>';
+		echo '<input type ="radio" name="caseColor" value="c4"> Black/Red<br>';
+		echo '<input type ="radio" name="caseColor" value="c5"> Orange<br>';
+		echo '<input type ="radio" name="caseColor" value="c6"> Green<br><br>';
 		echo '<div><input type="submit" value="Finish" /></div>';
 		echo '</form>';
 	}
