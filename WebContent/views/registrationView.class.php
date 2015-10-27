@@ -1,7 +1,7 @@
 <?php  
 class registrationView {
 	
-  public static function show($user, $userData) {  	
+  public static function show($user) {  	
 ?> 
 <!DOCTYPE html>
 <html>
@@ -14,18 +14,21 @@ class registrationView {
  
 <form method="Post" action="registration">
 Username: 
-<input type="text" name="userName" tabindex="1" value = "<?php if (!is_null($user)) { echo $user->getUserName(); }?>" required>
+<input type="text" name="username" tabindex="1" value = "<?php if (!is_null($user)) { echo $user->getUserName(); }?>" required>
 <span class="error">
-	 <?php if (!is_null($user)) {echo $user->getError('userName');}?>
+	 <?php if (!is_null($user)) {echo $user->getError('username');}?>
 </span>
 <br><br>
 Password: 
 <input type="password" name="password" tabindex="2" required>
+<span class="error">
+	 <?php if (!is_null($user)) {echo $user->getError('password');}?>
+</span>
 <br><br>
 Email:  
-<input type="email" name="email" tabindex="5" value = "<?php if (!is_null($userData)) { echo $userData->getEmail(); }?>" required>
+<input type="email" name="email" tabindex="5" value = "<?php if (!is_null($user)) { echo $user->getEmail(); }?>" required>
 <span class="error">
-	 <?php if (!is_null($userData)) {echo $userData->getError('email');}?>
+	 <?php if (!is_null($user)) {echo $user->getError('email');}?>
 </span>
 <br><br>
 <input type="submit" value="Register">

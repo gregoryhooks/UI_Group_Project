@@ -14,13 +14,16 @@ class LoginView {
  
 <form method="Post" action="login">
 Username: 
-<input type="text" name="userName" <?php if (!is_null($user)) {echo 'value = "'. $user->getUserName() .'"';}?> required>
+<input type="text" name="username" <?php if (!is_null($user)) {echo 'value = "'. $user->getUserName() .'"';}?> required>
 <span class="error">
-	 <?php if (!is_null($user)) {echo $user->getError('userName');}?>
+	 <?php if (!is_null($user)) {echo $user->getError('username');}?>
 </span>
 <br><br>
 Password: 
 <input type="password" name="password" required>
+<span class="error">
+	 <?php if (!is_null($user)) {echo $user->getError('password');}?>
+</span>
 <br><br>
 <input type="submit" value="Login">
 </form> 
