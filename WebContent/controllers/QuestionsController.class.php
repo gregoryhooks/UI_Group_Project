@@ -100,8 +100,7 @@ class QuestionsController {
 					echo '<div class="container">';
 					echo '<br><br><br>';
 					echo "Your computer is: " . $answers->getBudget() ." ". $answers->getPurpose() ." ". $answers->getGame() ." ". $answers->getStorage() ." ". $answers->getMem() ." ". $answers->getCasecolor();
-					echo '<img src="../resources/<?php echo $answers->getCasecolor()?>.jpg"
-					alt="userImage"> <br>';
+					echo '<img src="../resources/'.$answers->getCasecolor() . '.jpg" alt="userImage"> <br>';
 					
 					echo '</div>';
 				echo '</div>';
