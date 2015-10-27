@@ -91,15 +91,16 @@ class QuestionsController {
 				MasterView::showPageEnd();
 				break;
 			case "makePC" :
+				$answers->setCasecolor($_POST['caseColor']);
 				$_SESSION['headertitle'] = "PerfectPC";
 				$_SESSION['styles'] = array('styling1.css');
 				MasterView::showHeader();
 				MasterView::showNavbar();
 				echo '<div class="jumbotron">';
 					echo '<div class="container">';
-					if(strcmp($answers->setCasecolor($_POST['caseColor']), "c7") == 0)
-						$answers->setCasecolor(NULL);
-					Echo "Your computer is: " . $answers->getBudget() ." ". $answers->getPurpose() ." ". $answers->getGame() ." ". $answers->getStorage() ." ". $answers->getMem() ." ". $answers->getCasecolor();
+					echo "Your computer is: " . $answers->getBudget() ." ". $answers->getPurpose() ." ". $answers->getGame() ." ". $answers->getStorage() ." ". $answers->getMem() ." ". $answers->getCasecolor();
+					echo '<img src="../resources/<?php echo $answers->getCasecolor()?>.jpg"
+					alt="userImage"> <br>';
 					echo '</div>';
 				echo '</div>';
 				$_SESSION['footertitle'] = "<h3>The footer goes here</h3>";
