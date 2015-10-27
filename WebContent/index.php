@@ -11,6 +11,8 @@
 	 $_SESSION['action'] = $action;
 	 $_SESSION['arguments'] = $arguments;
 	 
+	 $answers = new Answers();
+	 $_SESSION['answers'] = $answers;
 	 
 	switch ($control) {
 		case "login": 

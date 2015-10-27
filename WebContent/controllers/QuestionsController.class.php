@@ -5,11 +5,12 @@ class QuestionsController {
 	public static function run() {
 
 		$action = (array_key_exists ( 'action', $_SESSION )) ? $_SESSION ['action'] : "";
-		$answers = (array_key_exists ( 'answer', $_SESSION )) ? $_SESSION ['answer'] :array();
+		$answers = (array_key_exists ( 'answers', $_SESSION )) ? $_SESSION ['answers'] :array();
 
 		
 		switch ($action) {
 			case "question2" :
+				$answers->setBudget($_POST['budget']);
 				$_SESSION['headertitle'] = "PerfectPC";
 				$_SESSION['styles'] = array('styling1.css');
 				MasterView::showHeader();
@@ -23,9 +24,9 @@ class QuestionsController {
 				$_SESSION['footertitle'] = "<h3>The footer goes here</h3>";
 				MasterView::showHomeFooter();
 				MasterView::showPageEnd();
-				$answers->setBudget($_POST['budget']);
 				break;
 			case "question3" :
+				$answers->setPurpose($_POST['purpose']);
 				$_SESSION['headertitle'] = "PerfectPC";
 				$_SESSION['styles'] = array('styling1.css');
 				MasterView::showHeader();
@@ -39,9 +40,9 @@ class QuestionsController {
 				$_SESSION['footertitle'] = "<h3>The footer goes here</h3>";
 				MasterView::showHomeFooter();
 				MasterView::showPageEnd();
-				$answers->setPurpose($_POST['purpose']);
 				break;
 			case "question4" :
+				$answers->setGame($_POST['game']);
 				$_SESSION['headertitle'] = "PerfectPC";
 				$_SESSION['styles'] = array('styling1.css');
 				MasterView::showHeader();
@@ -55,9 +56,9 @@ class QuestionsController {
 				$_SESSION['footertitle'] = "<h3>The footer goes here</h3>";
 				MasterView::showHomeFooter();
 				MasterView::showPageEnd();
-				$answers->setGame($_POST['game']);
 				break;
 			case "question5" :
+				$answers->setStorage($_POST['storage']);
 				$_SESSION['headertitle'] = "PerfectPC";
 				$_SESSION['styles'] = array('styling1.css');
 				MasterView::showHeader();
@@ -71,9 +72,10 @@ class QuestionsController {
 				$_SESSION['footertitle'] = "<h3>The footer goes here</h3>";
 				MasterView::showHomeFooter();
 				MasterView::showPageEnd();
-				$answers->setStorage($_POST['storage']);
+				
 				break;
 			case "question6" :
+				$answers->setMem($_POST['mem']);
 				$_SESSION['headertitle'] = "PerfectPC";
 				$_SESSION['styles'] = array('styling1.css');
 				MasterView::showHeader();
@@ -87,7 +89,6 @@ class QuestionsController {
 				$_SESSION['footertitle'] = "<h3>The footer goes here</h3>";
 				MasterView::showHomeFooter();
 				MasterView::showPageEnd();
-				$answers->setMem($_POST['mem']);
 				break;
 			case "makePC" :
 				$_SESSION['headertitle'] = "PerfectPC";
