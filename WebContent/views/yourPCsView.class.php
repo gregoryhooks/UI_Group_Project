@@ -1,19 +1,19 @@
 <?php  
 class yourPCsView {
-	
-  public static function show($pcList) {  	
-?> 
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Your PCs</title>
-</head>
-<body>
-<header>
-<h1>Your PCs</h1>
-</header>
-<?php 
+	public static function show($pcList) {
+		$_SESSION['headertitle'] = "Your PCs";
+		$_SESSION['styles'] = array('styling1.css');
+		MasterView::showHeader();
+		MasterView::showNavbar();
+		yourPcsView::showDetails($pcList);
+		$_SESSION['footertitle'] = "<h3>The footer goes here</h3>";
+		MasterView::showHomeFooter();
+		MasterView::showPageEnd();
+	}
+  public static function showDetails($pcList) {  	
+	echo '<div class="jumbotron">';
+    	echo '<div class="container">';
+    	echo '<h1>Your PCs</h1>'; 
 	if (is_null($pcList) || $pcList->getPCListSize() == 0){
 		echo "<aside>You currently do not have any saved PCs.</aside>";
 	}else{
@@ -25,8 +25,9 @@ class yourPCsView {
 		}
 
     }
+    	echo '</div>';
+    echo '</div>';
   }
+  
 }
 ?>
-</body>
-</html>

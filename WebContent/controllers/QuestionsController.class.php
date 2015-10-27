@@ -101,6 +101,7 @@ class QuestionsController {
 					echo "Your computer is: " . $answers->getBudget() ." ". $answers->getPurpose() ." ". $answers->getGame() ." ". $answers->getStorage() ." ". $answers->getMem() ." ". $answers->getCasecolor();
 					echo '<img src="../resources/<?php echo $answers->getCasecolor()?>.jpg"
 					alt="userImage"> <br>';
+					echo '<br><br><br>';
 					echo '</div>';
 				echo '</div>';
 				$_SESSION['footertitle'] = "<h3>The footer goes here</h3>";
