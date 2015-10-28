@@ -6,7 +6,6 @@ class QuestionsController {
 
 		$action = (array_key_exists ( 'action', $_SESSION )) ? $_SESSION ['action'] : "";
 		$answers = (array_key_exists ( 'answers', $_SESSION )) ? $_SESSION ['answers'] :array();
-
 		
 		switch ($action) {
 			case "question2" :
@@ -24,6 +23,7 @@ class QuestionsController {
 				$_SESSION['footertitle'] = "<h3>The footer goes here</h3>";
 				MasterView::showHomeFooter();
 				MasterView::showPageEnd();
+				print_r($answers);
 				break;
 			case "question3" :
 				$answers->setPurpose($_POST['purpose']);
@@ -40,6 +40,7 @@ class QuestionsController {
 				$_SESSION['footertitle'] = "<h3>The footer goes here</h3>";
 				MasterView::showHomeFooter();
 				MasterView::showPageEnd();
+				print_r($answers);
 				break;
 			case "question4" :
 				$answers->setGame($_POST['game']);
@@ -56,6 +57,7 @@ class QuestionsController {
 				$_SESSION['footertitle'] = "<h3>The footer goes here</h3>";
 				MasterView::showHomeFooter();
 				MasterView::showPageEnd();
+				print_r($answers);
 				break;
 			case "question5" :
 				$answers->setStorage($_POST['storage']);
@@ -99,7 +101,17 @@ class QuestionsController {
 				echo '<div class="jumbotron">';
 					echo '<div class="container">';
 					echo '<br><br><br>';
-					echo "Your computer is: " . $answers->getBudget() ." ". $answers->getPurpose() ." ". $answers->getGame() ." ". $answers->getStorage() ." ". $answers->getMem() ." ". $answers->getCasecolor();
+					echo "Your chosen computer is: ";
+					//echo "Your computer is: <br>" . $answers->getBudget() ." ". $answers->getPurpose() ." ". $answers->getGame() ." ". $answers->getStorage() ." ". $answers->getMem() ." ". $answers->getCasecolor();
+					
+					$builds = BuildsDB::getBuildsWith($answers->getBudget(), $answers->getPurpose(), $answers->getGame(),$answers->getStorage(), $answers->getMem(), $answers->getCasecolor());
+					
+					foreach($builds as $build){
+						print_r($build);
+						
+					}
+					
+					
 					echo '<img src="../resources/'.$answers->getCasecolor() . '.jpg" alt="userImage"> <br>';
 					
 					echo '</div>';

@@ -11,12 +11,15 @@
 	 $_SESSION['action'] = $action;
 	 $_SESSION['arguments'] = $arguments;
 	 
-	 $answers = new Answers();
-	 $_SESSION['answers'] = $answers;
+	 
+	 	$answers = new Answers();
+	 	
+	 if(is_null($_SESSION['answers']))	
+	 	$_SESSION['answers'] = $answers;
 	 
 	switch ($control) {
 		case "login": 
-			LoginController::run();
+			homeView::show();
 			break;
 		case "registration":
 			RegistrationController::run();
