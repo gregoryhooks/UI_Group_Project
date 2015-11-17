@@ -57,4 +57,10 @@ class Answers {
 		$this->mem = "mem";
 		$this->caseColor = "caseColor";
 	}
+	public function __toString() {
+		$str = "budget: ".$this->budget."<br>purpose: ".$this->prupose."<br>game: ".
+				$this->game."<br>storage: ".$this->storage."<br>mem: ".$this-mem.
+				"<br>caseColor: ".$this->caseColor;
+		return $str;
+	}
 }

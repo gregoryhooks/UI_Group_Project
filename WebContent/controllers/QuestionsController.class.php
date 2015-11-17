@@ -134,10 +134,9 @@ class QuestionsController {
 						echo "<br>Power Supply: ";
 						$part = PartsDB::getPartRowSetsBy("psupplies", "psupplyId", $build['powersupId']);
 						echo $part[0]['Make']." ".$part[0]['Model']." ".$part[0]['Watts']." Watts $".$part[0]['price']."<br>";
+
 					}
-					
-					
-					echo '<img src="../resources/'.$answers->getCasecolor() . '.jpg" alt="userImage"> <br>';
+					echo '<img src="../images/'.$answers->getCasecolor() . '.jpg" alt="userImage"> <br>';
 					
 					echo '</div>';
 				echo '</div>';

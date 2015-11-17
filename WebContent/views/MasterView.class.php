@@ -162,6 +162,7 @@ $base = (array_key_exists('base', $_SESSION))?$_SESSION['base']:"";
     }
     
     public static function showCategories() {
+    	$base = (array_key_exists('base', $_SESSION))? $_SESSION['base']: "";
     	?>
     		 <!-- Page Content -->
         <div class="container">
@@ -169,11 +170,11 @@ $base = (array_key_exists('base', $_SESSION))?$_SESSION['base']:"";
             <div class="row">
     
                 <div class="col-md-3">
-                    <p class="lead">Cabinitron</p>
+                    <p class="lead">Build PCs</p>
                     <div class="list-group">
-                        <a href="#" class="list-group-item">Category 1</a>
-                        <a href="#" class="list-group-item">Category 2</a>
-                        <a href="#" class="list-group-item">Category 3</a>
+                        <a href="/<?php echo $base; ?>/questions" class="list-group-item">Custom based on your needs</a>
+                        <a href="#" class="list-group-item">Build your own PC</a>
+                        <a href="#" class="list-group-item">Pre-Built PCs</a>
                     </div>
                 </div>
     

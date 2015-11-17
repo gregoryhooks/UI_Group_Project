@@ -1,11 +1,15 @@
 <?php
 class preBuild{
-	private $make;
-	private $model;
-	private $description;
-	private $image;
+	private $buildId;
+	private $caseID;
+	private $cpuId;
 	private $price;
-	private $ID;
+	private $hdriveId;
+	private $ramId;
+	private $gpuId;
+	private $mboardId;
+	private $mboardId;
+	
 	
 	public function __construct($formInput = null) {
 		$this->formInput = $formInput;
@@ -13,32 +17,45 @@ class preBuild{
 	}
 
 	
-	public function getMake() {
-		return $this->make;
+	public function getBuildId() {
+		return $this->buildId;
 	}
-	public function getModel(){
-		return $this->model;
+	public function getCaseID(){
+		return $this->caseID;
 	}
-	public function getDescription(){
-		return $this->description;
-	}
-	public function getImage(){
-		return $this->image;
+	public function getCpuId(){
+		return $this->cpuId;
 	}
 	public function getPrice(){
 		return $this->price;
 	}
-	public function getId(){
-		return $this->ID;
+	public function getHdriveId(){
+		return $this->hdriveId;
+	}
+	public function getRamId() {
+		return $this->ramId;
+	}
+	public function getGpuId() {
+		return $this->gpuId;
+	}
+	public function getMboardId() {
+		return $this->mboardId;
+	}
+	public function getPowersupId() {
+		return $this->powersupId;
 	}
 public function getParameters() {
 		// Return data fields as an associative array
-		$paramArray = array("make" => $this->make,
-							"model" => $this->model,
-							"description" => $this->description,
-							"image" => $this->image,
+		$paramArray = array("buildId" => $this->buildId,
+							"caseID" => $this->caseID,
+							"cpuId" => $this->cpuId,
+							"caseId" => $this->caseId,
 							"price" => $this->price,
-							"ID" => $this->ID
+							"hdriveId" => $this->hdriveId,
+							"ramId" => $this->ramId,
+							"gpuId" => $this->gpuId,
+							"mboardId" => $this->mboardId,
+							"powersupId" => $this->powersupId
 		); 
 		return $paramArray;
 	}
@@ -58,26 +75,22 @@ public function getParameters() {
 		$this->errorCount = 0;
 		$this->errors = array();
 		if (is_null($this->formInput)){
-			$this->make = "make";
-			$this->model = "model";
-			$this->description = "description";
-			$this->image = "image";
+			$this->buildId = "buildId";
+			$this->caseID = "caseID";
+			$this->cpuId = "cpuId";
+			$this->caseId = "caseId";
 			$this->price = "price";
-			$this->ID = "ID";
+			$this->hdriveId = "hdriveId";
 		}
 		else  {	 
-		   $this->make = $this->extractForm('make');
-		   $this->model = $this->extractForm('model');
-		   $this->description = $this->extractForm('description');
-		   $this->image = $this->extractForm('image');
+		   $this->buildId = $this->extractForm('buildId');
+		   $this->caseID = $this->extractForm('caseID');
+		   $this->cpuId = $this->extractForm('cpuId');
+		   $this->caseId = $this->extractForm('caseId');
 		   $this->price = $this->extractForm('price');
-		   $this->ID = $this->extractForm('ID');
+		   $this->hdriveId = $this->extractForm('hdriveId');
 		}
 	}
-	
-	
-	
-	
-	
+		
 }
 ?>
