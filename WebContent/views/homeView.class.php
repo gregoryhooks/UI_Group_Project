@@ -3,8 +3,8 @@ class homeView {
 		public static function show() {
 			$_SESSION['headertitle'] = "PerfectPC";
 			$_SESSION['styles'] = array('styling1.css');
-			MasterView::showHeader();
-			MasterView::showNavbar();
+			MasterView::showHeader2();
+			MasterView::showHomenavbar();
 			HomeView::showDetails();
 			$_SESSION['footertitle'] = "<h3>The footer goes here</h3>";
 			MasterView::showHomeFooter();
