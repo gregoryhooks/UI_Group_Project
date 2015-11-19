@@ -1,14 +1,14 @@
 <?php
 class preBuild{
 	private $buildId;
-	private $caseID;
+	private $caseId;
 	private $cpuId;
 	private $price;
 	private $hdriveId;
 	private $ramId;
 	private $gpuId;
 	private $mboardId;
-	private $mboardId;
+	private $image;
 	
 	
 	public function __construct($formInput = null) {
@@ -20,8 +20,11 @@ class preBuild{
 	public function getBuildId() {
 		return $this->buildId;
 	}
+	public function getImage(){
+		return $this->image;
+	}
 	public function getCaseID(){
-		return $this->caseID;
+		return $this->caseId;
 	}
 	public function getCpuId(){
 		return $this->cpuId;
@@ -55,6 +58,7 @@ public function getParameters() {
 							"ramId" => $this->ramId,
 							"gpuId" => $this->gpuId,
 							"mboardId" => $this->mboardId,
+							"image" => $this->image,
 							"powersupId" => $this->powersupId
 		); 
 		return $paramArray;
@@ -81,6 +85,11 @@ public function getParameters() {
 			$this->caseId = "caseId";
 			$this->price = "price";
 			$this->hdriveId = "hdriveId";
+			$this->ramId = "ramId";
+			$this->gpuId= "gpuId";
+			$this->mboardId= "mboardId";
+			$this->powersupId= "powersupId";
+			$this->image = "image";
 		}
 		else  {	 
 		   $this->buildId = $this->extractForm('buildId');
@@ -89,6 +98,11 @@ public function getParameters() {
 		   $this->caseId = $this->extractForm('caseId');
 		   $this->price = $this->extractForm('price');
 		   $this->hdriveId = $this->extractForm('hdriveId');
+		   $this->ramId = $this->extractForm('ramId');
+		   $this->gpuId= $this->extractForm('gpuId');
+		   $this->mboardId= $this->extractForm('mboardId');
+		   $this->powersupId= $this->extractForm('powersupID');
+		   $this->image= $this->extractForm('image');
 		}
 	}
 		

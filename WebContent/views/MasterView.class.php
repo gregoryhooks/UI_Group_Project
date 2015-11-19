@@ -33,7 +33,7 @@ class MasterView {
     							<span class="icon-bar"></span> <span class="icon-bar"></span> <span
     								class="icon-bar"></span>
     						</button>
-    						<a class="navbar-brand" href="<?php echo "/" .$base. "/home"?>">Group Finder</a>
+    						<a class="navbar-brand" href="<?php echo "/" .$base. "/home"?>">PerfectPC</a>
     					</div>
     				
     				<form class="navbar-form navbar-right" action ="user" method = "Post">
@@ -203,9 +203,9 @@ $base = (array_key_exists('base', $_SESSION))?$_SESSION['base']:"";
                                 <img src="./images/<?php echo $item->getImage()?>" alt="<?php echo $item -> getImage();?>">
                                 <div class="caption">
                                     <h4 class="pull-right"><?php echo $item->getPrice();?></h4>
-                                    <h4><a href="<?php echo "/" .$base. "/item/" . $item->getID();?>"><?php echo $item->getModel();?></a>
+                                    <h4><a href="<?php echo "/" .$base. "/item/" . $item->getBuildId();?>"><?php echo $item->getMboardId();?></a>
                                     </h4>
-                                    <p><?php echo $item->getDescription();?></p>
+                                    <p><?php echo $item->getcpuId();?></p>
                                 </div>
                                 <div class="ratings">
                                     <p class="pull-right">12 reviews</p>
