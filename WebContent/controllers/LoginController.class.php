@@ -29,9 +29,9 @@ class LoginController {
 	    	}
 	    	$_SESSION['user'] = $user;
 	    	if (is_null($user) || $user->getErrorCount() != 0) {
-	    		loginView::show($user);
+	    		userviewController::run();
 	    	} else {
-	    		homeView::show($user);
+	    		homeView::show();
 	    		//header('Location: /'.$_SESSION['base']);
 	    	}
 	    }

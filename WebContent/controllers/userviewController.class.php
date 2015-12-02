@@ -6,9 +6,7 @@ class userviewController {
 		$action = (array_key_exists ( 'action', $_SESSION )) ? $_SESSION ['action'] : "";
 				
 		switch ($action) {
-			case "login":
-				UserView::show();
-				break;
+			
 			case "create" :
 				break;
 			default:	
