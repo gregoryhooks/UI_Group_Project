@@ -24,11 +24,17 @@
 		case "registration":
 			RegistrationController::run();
 			break;
-		case "yourPCs":
+		case "yourpcs":
 			YourPCsController::run();
 			break;
 		case "questions":
 			QuestionsController::run();
+			break;
+		case "build":
+			BuildController::run();
+			break;
+		case "prebuilt":
+			PrebuiltController::run();
 			break;
 		default:
 			homeView::show(null);

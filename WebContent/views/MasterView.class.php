@@ -58,7 +58,7 @@ $base = (array_key_exists('base', $_SESSION))?$_SESSION['base']:"";
 		echo '<meta name="description" content="">';
 		echo '<meta name="author" content="">';
 		
-		echo '<title>Cabinitron</title>';
+		echo '<title>PefectPC</title>';
 		
 		echo '<!-- Bootstrap Core CSS -->';
 		echo '<link href="/'.$base.'/bootstrap/css/bootstrap.min.css" rel="stylesheet">';
@@ -173,8 +173,9 @@ $base = (array_key_exists('base', $_SESSION))?$_SESSION['base']:"";
                     <p class="lead">Build PCs</p>
                     <div class="list-group">
                         <a href="/<?php echo $base; ?>/questions" class="list-group-item">Custom based on your needs</a>
-                        <a href="#" class="list-group-item">Build your own PC</a>
-                        <a href="#" class="list-group-item">Pre-Built PCs</a>
+                        <a href="/<?php echo $base; ?>/build" class="list-group-item">Build your own PC</a>
+                        <a href="/<?php echo $base; ?>/prebuilt" class="list-group-item">Pre-Built PCs</a>
+                        <a href="/<?php echo $base; ?>/yourpcs" class="list-group-item">Your PCs</a>
                     </div>
                 </div>
     
@@ -200,10 +201,10 @@ $base = (array_key_exists('base', $_SESSION))?$_SESSION['base']:"";
     		?>
     				<div class="col-sm-4 col-lg-4 col-md-4">
                             <div class="thumbnail">
-                                <img src="./images/<?php echo $item->getImage()?>" alt="<?php echo $item -> getImage();?>">
+                                <img src="./images/<?php echo $item->getCaseId()?>.jpg" alt="<?php echo $item -> getImage();?>">
                                 <div class="caption">
                                     <h4 class="pull-right"><?php echo $item->getPrice();?></h4>
-                                    <h4><a href="<?php echo "/" .$base. "/item/" . $item->getBuildId();?>"><?php echo $item->getMboardId();?></a>
+                                    <h4><a href="<?php echo "/" .$base. "/item/" . $item->getBuildId();?>"><?php echo $item->getBuildId();?></a>
                                     </h4>
                                     <p><?php echo $item->getcpuId();?></p>
                                 </div>

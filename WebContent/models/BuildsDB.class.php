@@ -85,6 +85,29 @@ class BuildsDB {
 		return $buildRowSets;
 	}
 	
+public static function getRandomBuild() {
+	
+		//Returns a random build from the builds table
+		$buildRowSets = NULL;
+		try {
+			$db = Database::getDB ();
+			$query = "SELECT * FROM builds ORDER BY RAND()";
+			$statement = $db->prepare ($query);
+			$statement->execute ();
+			$buildRowSets = $statement->fetchAll(PDO::FETCH_ASSOC);
+			$statement->closeCursor ();
+		} catch (Exception $e) { // Not permanent error handling
+			echo "garbage occured";
+		}
+		if (!empty($buildRowSets)) {
+			foreach ($buildRowSets as $buildRow ) {
+				$prebuilt = new preBuild($buildRow);
+			}
+		}
+		
+		return $prebuilt;
+	}
+	
 	public static function getAllBuilds() {
 	
 		//Returns all builds in the builds table
