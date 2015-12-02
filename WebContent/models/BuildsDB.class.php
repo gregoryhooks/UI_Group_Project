@@ -91,7 +91,12 @@ public static function getRandomBuild() {
 		$buildRowSets = NULL;
 		try {
 			$db = Database::getDB ();
-			$query = "SELECT * FROM builds ORDER BY RAND()";
+			//$query = "SELECT * FROM builds ORDER BY RAND()";
+			$query = "SELECT * FROM builds WHERE (buildId = 'build";
+			$number = rand(0, 46654);
+			if ($number < 10)
+				$number = "0".$number;
+			$query = $query.$number."')";
 			$statement = $db->prepare ($query);
 			$statement->execute ();
 			$buildRowSets = $statement->fetchAll(PDO::FETCH_ASSOC);
