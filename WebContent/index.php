@@ -18,7 +18,7 @@
 	 	$_SESSION['answers'] = $answers;
 	 
 	switch ($control) {
-		case "login":
+		case "user":
 			userviewController::run();
 			break;
 		case "registration":
