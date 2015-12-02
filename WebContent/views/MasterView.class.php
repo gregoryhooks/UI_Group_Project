@@ -165,7 +165,7 @@ $base = (array_key_exists('base', $_SESSION))?$_SESSION['base']:"";
     	$base = (array_key_exists('base', $_SESSION))? $_SESSION['base']: "";
     	?>
     		 <!-- Page Content -->
-        <div class="container">
+        <div class="container" style="margin-left:0">
     
             <div class="row">
     
@@ -179,7 +179,7 @@ $base = (array_key_exists('base', $_SESSION))?$_SESSION['base']:"";
                     </div>
                 </div>
     
-                <div class="col-md-9">
+                <div class="col-md-9 center-block" style="padding-left:100px">
     
                     <div class="row carousel-holder">
     
