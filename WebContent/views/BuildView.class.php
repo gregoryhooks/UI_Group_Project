@@ -13,10 +13,39 @@ class BuildView {
 			MasterView::showMotherBoard($part);
 		}
 		
-		/*$parts = PartsDB::getPartRowSetsByType("cpus");
+		/*                                                        Just uncomment the following code blocks to show their views.
+		
+		$parts = PartsDB::getPartRowSetsByType("cpus");
 		foreach($parts as $part){
 			MasterView::showCPU($part);
-		}*/
+		}
+		
+		$parts = PartsDB::getPartRowSetsByType("memory");
+		foreach($parts as $part){
+			MasterView::showMemory($part);
+		}
+		
+		$parts = PartsDB::getPartRowSetsByType("gpus");
+		foreach($parts as $part){
+			MasterView::showGPU($part);
+		}
+		
+		$parts = PartsDB::getPartRowSetsByType("harddrives");
+		foreach($parts as $part){
+			MasterView::showHardDrive($part);
+		}
+		
+		$parts = PartsDB::getPartRowSetsByType("psupplies");
+		foreach($parts as $part){
+			MasterView::showPowerSupply($part);
+		}
+		
+		$parts = PartsDB::getPartRowSetsByType("cases");
+		foreach($parts as $part){
+			MasterView::showCase($part);
+		}
+		
+		*/
 		
 		//echo '<h3><a href="/' . $_SESSION['base'] . '/tests">View Tests</a></h3>';
 		//echo '<h3><a href="/' . $_SESSION['base'] . '/TestpageView">View Test Page</a></h3>';

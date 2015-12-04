@@ -203,7 +203,7 @@ $base = (array_key_exists('base', $_SESSION))?$_SESSION['base']:"";
                             <div class="thumbnail">
                                 <img src="./images/<?php echo $item->getCaseId()?>.jpg" alt="<?php echo $item -> getImage();?>">
                                 <div class="caption">
-                                    <h4 class="pull-right"><?php echo $item->getPrice();?></h4>
+                                    <h4 class="pull-right"><?php echo '$'; printf("%0.2f",$item->getPrice());?></h4>
                                     <h4><a href="<?php echo "/" .$base. "/item/" . $item->getBuildId();?>"><?php echo $item->getBuildId();?></a>
                                     </h4>
                                     <p><?php echo $item->getcpuId();?></p>
@@ -235,7 +235,7 @@ $base = (array_key_exists('base', $_SESSION))?$_SESSION['base']:"";
     		                                <img style="height: 200px; width: 250px" src="./images/<?php echo $item['mboardId']?>.png" alt="<?php echo 'Imagine a beautiful motherboard here';?>">
     		                                <!-- <div class="caption" style="height: 150px"> -->
     		                                <div class="caption" style="height: 285px">
-    		                                    <h4 class="pull-right"><?php echo '$'.$item['price'];?></h4>
+    		                                    <h4 class="pull-right"><?php echo '$'; printf("%0.2f",$item['price']);?></h4>
     		                                    <h4><a href="<?php echo "/" .$base. "/item/" . $item['mboardId'];?>"><?php echo $item['mboardId'];?></a>
     		                                    </h4>
     		                                    <p><?php echo "<div class=\"pull-right\">".$item['Make']."</div>"; ?>
@@ -284,22 +284,23 @@ $base = (array_key_exists('base', $_SESSION))?$_SESSION['base']:"";
     		    			?>
     		    		    		    				<div class="col-sm-4 col-lg-4 col-md-4">
     		    		    		                            <div class="thumbnail">
-    		    		    		                                <img style="height: 200px; width: 250px" src="./images/<?php echo $item['cpuId']?>.png" alt="<?php echo 'Imagine a beautiful cpu box here';?>">
+    		    		    		                                <img style="height: 200px; width: 250px" src="./images/<?php echo $item['cpuId']?>.jpg" alt="<?php echo 'Imagine a beautiful cpu box here';?>">
     		    		    		                                <!-- <div class="caption" style="height: 150px"> -->
-    		    		    		                                <div class="caption" style="height: 275px">
-    		    		    		                                    <h4 class="pull-right"><?php echo $item['Price'];?></h4>
+    		    		    		                                <div class="caption" style="height: 175px">
+    		    		    		                                    <h4 class="pull-right"><?php echo '$'; printf("%0.2f",$item['Price']);?></h4>
     		    		    		                                    <h4><a href="<?php echo "/" .$base. "/item/" . $item['cpuId'];?>"><?php echo $item['cpuId'];?></a>
     		    		    		                                    </h4>
+    		    		    		                                    <?php echo 'Brand: ';?>
     		    		    		                                    <?php
     		    		    		                                    if (substr($item['cpuId'], -3, -2) == 'A') { 
-    		    		    		                                    	echo '<img style="height: 50px; width: 50px;" src="./images/AMD_logo.png" alt="\'Imagine a CPU manufacture here\'">';
-    		    		    		                                    }else{
-    		    		    		                                    	echo '<img style="height: 32px; width: 37px; position: relative; left: 103px" src="./images/Intel_logo.png" alt="\'Imagine a CPU manufacture here\'">';
-    		    		    		                                    }
+    		    		    		                                    	echo '<img style="height: 50px; width: 50px; position: relative; left: 131px" src="./images/AMD_logo.png" alt="\'Imagine a CPU manufacture here\'">';
+						    		                                    }else{
+						    		                                    	echo '<img style="height: 32px; width: 37px; position: relative; left: 136px" src="./images/Intel_logo.png" alt="\'Imagine a CPU manufacture here\'">';
+						    		                                    }
     		    		    		                                    ?>
-    		    		    		                                    <!--  <p><?php echo $item['Make'];?></p> -->
-    		    		    		                                    <p><?php echo $item['Model'];?></p>
-    		    		    		                                    <p><?php echo "<div class=\"pull-right\">".$item['Speed(GHz)']."</div>"; ?>
+    		    		    		                                    <p><?php echo "<div class=\"pull-right\">".$item['Model']."</div>"; ?>
+    		                                    						<?php echo "Model: ";?></p>
+    		    		    		                                    <p><?php echo "<div class=\"pull-right\">".$item['Speed(GHz)']." GHz</div>"; ?>
     		    		    		                                    <?php echo "Speed: ";?></p>
     		    		    		                                </div>
     		    		    		                                
@@ -320,7 +321,196 @@ $base = (array_key_exists('base', $_SESSION))?$_SESSION['base']:"";
     		    		    		    	
     		    		    		    	<?php
     		    		    		    		}
-    
+    		    		    		    		public static function showMemory($item) {
+    		    		    		    			$base = (array_key_exists('base', $_SESSION))?$_SESSION['base']: NULL;
+    		    		    		    		
+    		    		    		    			?>
+    		    		    		    		    		    		    		    				<div class="col-sm-4 col-lg-4 col-md-4">
+    		    		    		    		    		    		    		                            <div class="thumbnail">
+    		    		    		    		    		    		    		                                <img style="height: 200px; width: 250px" src="./images/<?php echo $item['ramId']?>.jpg" alt="<?php echo 'Imagine a beautiful memory box here';?>">
+    		    		    		    		    		    		    		                                <!-- <div class="caption" style="height: 150px"> -->
+    		    		    		    		    		    		    		                                <div class="caption" style="height: 175px">
+    		    		    		    		    		    		    		                                    <h4 class="pull-right"><?php echo '$'; printf("%0.2f",$item['price']);?></h4>
+    		    		    		    		    		    		    		                                    <h4><a href="<?php echo "/" .$base. "/item/" . $item['ramId'];?>"><?php echo $item['ramId'];?></a>
+    		    		    		    		    		    		    		                                    </h4>
+    		    		    		    		    		    		    		                                    <p><?php echo "<div class=\"pull-right\">".$item['Make']."</div>"; ?>
+    		    		    		    		    		                                    						<?php echo "Brand: ";?></p>
+    		    		    		    		    		    		    		                                    <p><?php echo "<div class=\"pull-right\">".$item['Model']."</div>"; ?>
+    		    		    		    		    		                                    						<?php echo "Model: ";?></p>
+    		    		    		    		    		    		    		                                    <p><?php echo "<div class=\"pull-right\">".$item['Size(GB)']."</div>"; ?>
+    		    		    		    		    		    		    		                                    <?php echo "Size: ";?></p>
+    		    		    		    		    		    		    		                                    <p><?php echo "<div class=\"pull-right\">".$item['Type']."</div>"; ?>
+    		    		    		    		    		                                    						<?php echo "Type: ";?></p>
+    		    		    		    		    		    		    		                                </div>
+    		    		    		    		    		    		    		                                
+    		    		    		    		    		    		    		                                <div class="ratings">
+    		    		    		    		    		    		    		                                    <p class="pull-right">12 reviews</p>
+    		    		    		    		    		    		    		                                    <p>
+    		    		    		    		    		    		    		                                        <span class="glyphicon glyphicon-star"></span>
+    		    		    		    		    		    		    		                                        <span class="glyphicon glyphicon-star"></span>
+    		    		    		    		    		    		    		                                        <span class="glyphicon glyphicon-star"></span>
+    		    		    		    		    		    		    		                                        <span class="glyphicon glyphicon-star"></span>
+    		    		    		    		    		    		    		                                        <span class="glyphicon glyphicon-star-empty"></span>
+    		    		    		    		    		    		    		                                    </p>
+    		    		    		    		    		    		    		                                </div>
+    		    		    		    		    		    		    		                            </div>
+    		    		    		    		    		    		    		                        </div>
+    		    		    		    		    		    		    		                        
+    		    		    		    		    		    		    		                       
+    		    		    		    		    		    		    		    	
+    		    		    		    		    		    		    		    	<?php
+    		    		    		    		    		    		    		    		}
+    		    		    		    		    		    		    		    		public static function showGPU($item) {
+    		    		    		    		    		    		    		    			$base = (array_key_exists('base', $_SESSION))?$_SESSION['base']: NULL;
+    		    		    		    		    		    		    		    		
+    		    		    		    		    		    		    		    			?>
+    		    		    		    		    		    		    		    		    		    		    		    		    		    		    		    				<div class="col-sm-4 col-lg-4 col-md-4">
+    		    		    		    		    		    		    		    		    		    		    		    		    		    		    		                            <div class="thumbnail">
+    		    		    		    		    		    		    		    		    		    		    		    		    		    		    		                                <img style="height: 200px; width: 250px" src="./images/<?php echo $item['gpuId']?>.jpg" alt="<?php echo 'Imagine a beautiful gpu here';?>">
+    		    		    		    		    		    		    		    		    		    		    		    		    		    		    		                                <!-- <div class="caption" style="height: 150px"> -->
+    		    		    		    		    		    		    		    		    		    		    		    		    		    		    		                                <div class="caption" style="height: 175px">
+    		    		    		    		    		    		    		    		    		    		    		    		    		    		    		                                    <h4 class="pull-right"><?php echo '$'; printf("%0.2f",$item['price']);?></h4>
+    		    		    		    		    		    		    		    		    		    		    		    		    		    		    		                                    <h4><a href="<?php echo "/" .$base. "/item/" . $item['gpuId'];?>"><?php echo $item['gpuId'];?></a>
+    		    		    		    		    		    		    		    		    		    		    		    		    		    		    		                                    </h4>
+    		    		    		    		    		    		    		    		    		    		    		    		    		    		    		                                    <p><?php echo "<div class=\"pull-right\">".$item['Make']."</div>"; ?>
+    		    		    		    		    		    		    		    		    		    		    		    		    		                                    						<?php echo "Brand: ";?></p>
+    		    		    		    		    		    		    		    		    		    		    		    		    		    		    		                                    <p><?php echo "<div class=\"pull-right\">".$item['Model']."</div>"; ?>
+    		    		    		    		    		    		    		    		    		    		    		    		    		                                    						<?php echo "Model: ";?></p>
+    		    		    		    		    		    		    		    		    		    		    		    		    		                                    						<p><?php $speed = $item['Speed(GHz)'] * 1000; echo "<div class=\"pull-right\">".$speed." MHz</div>"; ?>
+    		    		    		    		    		    		    		    		    		    		    		    		    		                                    						<?php echo "Speed: ";?></p>
+    		    		    		    		    		    		    		    		    		    		    		    		    		    		    		                                    <p><?php echo "<div class=\"pull-right\">".$item['Memory(GB)']." GB</div>"; ?>
+    		    		    		    		    		    		    		    		    		    		    		    		    		    		    		                                    <?php echo "Memory: ";?></p>
+    		    		    		    		    		    		    		    		    		    		    		    		    		    		    		                                </div>
+    		    		    		    		    		    		    		    		    		    		    		    		    		    		    		                                
+    		    		    		    		    		    		    		    		    		    		    		    		    		    		    		                                <div class="ratings">
+    		    		    		    		    		    		    		    		    		    		    		    		    		    		    		                                    <p class="pull-right">12 reviews</p>
+    		    		    		    		    		    		    		    		    		    		    		    		    		    		    		                                    <p>
+    		    		    		    		    		    		    		    		    		    		    		    		    		    		    		                                        <span class="glyphicon glyphicon-star"></span>
+    		    		    		    		    		    		    		    		    		    		    		    		    		    		    		                                        <span class="glyphicon glyphicon-star"></span>
+    		    		    		    		    		    		    		    		    		    		    		    		    		    		    		                                        <span class="glyphicon glyphicon-star"></span>
+    		    		    		    		    		    		    		    		    		    		    		    		    		    		    		                                        <span class="glyphicon glyphicon-star"></span>
+    		    		    		    		    		    		    		    		    		    		    		    		    		    		    		                                        <span class="glyphicon glyphicon-star-empty"></span>
+    		    		    		    		    		    		    		    		    		    		    		    		    		    		    		                                    </p>
+    		    		    		    		    		    		    		    		    		    		    		    		    		    		    		                                </div>
+    		    		    		    		    		    		    		    		    		    		    		    		    		    		    		                            </div>
+    		    		    		    		    		    		    		    		    		    		    		    		    		    		    		                        </div>
+    		    		    		    		    		    		    		    		    		    		    		    		    		    		    		                        
+    		    		    		    		    		    		    		    		    		    		    		    		    		    		    		                       
+    		<?php
+    		   }    		    		    		    		    		    		    		    		    		    		    		    		    		    		    	
+    		 public static function showHardDrive($item) {
+    			$base = (array_key_exists('base', $_SESSION))?$_SESSION['base']: NULL;
+    		
+    			?>
+    		    				<div class="col-sm-4 col-lg-4 col-md-4">
+    		                            <div class="thumbnail">
+    		                                <img style="height: 200px; width: 250px" src="./images/<?php echo $item['hdriveId']?>.jpg" alt="<?php echo 'Imagine a beautiful hard drive here';?>">
+    		                                <!-- <div class="caption" style="height: 150px"> -->
+    		                                <div class="caption" style="height: 175px">
+    		                                    <h4 class="pull-right"><?php echo '$'; printf("%0.2f",$item['price']);?></h4>
+    		                                    <h4><a href="<?php echo "/" .$base. "/item/" . $item['hdriveId'];?>"><?php echo $item['hdriveId'];?></a>
+    		                                    </h4>
+    		                                    <p><?php echo "<div class=\"pull-right\">".$item['Make']."</div>"; ?>
+    		                                    <?php echo "Brand: ";?></p>
+    		                                    <p><?php echo "<div class=\"pull-right\">".$item['Model']."</div>"; ?>
+    		                                    <?php echo "Model: ";?></p>
+    		                                    <p><?php echo "<div class=\"pull-right\">".$item['Size']."</div>"; ?>
+    		                                    <?php echo "Size: ";?></p>
+    		                                    <p><?php echo "<div class=\"pull-right\">".$item['Speed']." RPM</div>"; ?>
+    		                                    <?php echo "Rotation Speed: ";?></p>
+    		                                </div>
+    		                                
+    		                                <div class="ratings">
+    		                                    <p class="pull-right">12 reviews</p>
+    		                                    <p>
+    		                                        <span class="glyphicon glyphicon-star"></span>
+    		                                        <span class="glyphicon glyphicon-star"></span>
+    		                                        <span class="glyphicon glyphicon-star"></span>
+    		                                        <span class="glyphicon glyphicon-star"></span>
+    		                                        <span class="glyphicon glyphicon-star-empty"></span>
+    		                                    </p>
+    		                                </div>
+    		                            </div>
+    		                        </div>
+    		                        
+    		                       
+    		    <?php
+    		   }    		    		    		    		    		    		    		    		    		    		    		    		    		    		    	
+    		 public static function showPowerSupply($item) {
+    			$base = (array_key_exists('base', $_SESSION))?$_SESSION['base']: NULL;
+    		
+    			?>
+    		    				<div class="col-sm-4 col-lg-4 col-md-4">
+    		                            <div class="thumbnail">
+    		                                <img style="height: 200px; width: 250px" src="./images/<?php echo $item['psupplyId']?>.jpg" alt="<?php echo 'Imagine a beautiful power supply here';?>">
+    		                                <!-- <div class="caption" style="height: 150px"> -->
+    		                                <div class="caption" style="height: 140px">
+    		                                    <h4 class="pull-right"><?php echo '$'; printf("%0.2f",$item['price']);?></h4>
+    		                                    <h4><a href="<?php echo "/" .$base. "/item/" . $item['psupplyId'];?>"><?php echo $item['psupplyId'];?></a>
+    		                                    </h4>
+    		                                    <p><?php echo "<div class=\"pull-right\">".$item['Make']."</div>"; ?>
+    		                                    <?php echo "Brand: ";?></p>
+    		                                    <p><?php echo "<div class=\"pull-right\">".$item['Model']."</div>"; ?>
+    		                                    <?php echo "Model: ";?></p>
+    		                                    <p><?php echo "<div class=\"pull-right\">".$item['Watts']."</div>"; ?>
+    		                                    <?php echo "Watts: ";?></p>
+    		                                </div>
+    		                                
+    		                                <div class="ratings">
+    		                                    <p class="pull-right">12 reviews</p>
+    		                                    <p>
+    		                                        <span class="glyphicon glyphicon-star"></span>
+    		                                        <span class="glyphicon glyphicon-star"></span>
+    		                                        <span class="glyphicon glyphicon-star"></span>
+    		                                        <span class="glyphicon glyphicon-star"></span>
+    		                                        <span class="glyphicon glyphicon-star-empty"></span>
+    		                                    </p>
+    		                                </div>
+    		                            </div>
+    		                        </div>
+    		                        
+    		                       
+    		    	
+    		    	<?php
+    		    		}
+    		    		public static function showCase($item) {
+    		    			$base = (array_key_exists('base', $_SESSION))?$_SESSION['base']: NULL;
+    		    		
+    		    			?>
+    		    		    		    				<div class="col-sm-4 col-lg-4 col-md-4">
+    		    		    		                            <div class="thumbnail">
+    		    		    		                                <img src="./images/<?php echo $item['caseId']?>.jpg" alt="<?php echo 'Imagine a beautiful case here';?>">
+    		    		    		                                <!-- <div class="caption" style="height: 150px"> -->
+    		    		    		                                <div class="caption" style="height: 195px">
+    		    		    		                                    <h4 class="pull-right"><?php echo '$'; printf("%0.2f",$item['Price']);?></h4>
+    		    		    		                                    <h4><a href="<?php echo "/" .$base. "/item/" . $item['caseId'];?>"><?php echo $item['caseId'];?></a>
+    		    		    		                                    </h4>
+    		    		    		                                    <p><?php echo "<div class=\"pull-right\">".$item['Make']."</div>"; ?>
+    		    		    		                                    <?php echo "Brand: ";?></p>
+    		    		    		                                    <p><?php echo "<div class=\"pull-right\">".$item['Model']."</div>"; ?>
+    		    		    		                                    <?php echo "Model: ";?></p>
+    		    		    		                                    <p><?php echo "<div class=\"pull-right\">".$item['Color']."</div>"; ?>
+    		    		    		                                    <?php echo "Color: ";?></p>
+    		    		    		                                    <p><?php echo "<div class=\"pull-right\">".$item['Style']."</div>"; ?>
+    		    		    		                                    <?php echo "Style: ";?></p>
+    		    		    		                                    <p><?php echo "<div class=\"pull-right\">".$item['Size']."</div>"; ?>
+    		    		    		                                    <?php echo "Size: ";?></p>
+    		    		    		                                </div>
+    		    		    		                                
+    		    		    		                                <div class="ratings">
+    		    		    		                                    <p class="pull-right">12 reviews</p>
+    		    		    		                                    <p>
+    		    		    		                                        <span class="glyphicon glyphicon-star"></span>
+    		    		    		                                        <span class="glyphicon glyphicon-star"></span>
+    		    		    		                                        <span class="glyphicon glyphicon-star"></span>
+    		    		    		                                        <span class="glyphicon glyphicon-star"></span>
+    		    		    		                                        <span class="glyphicon glyphicon-star-empty"></span>
+    		    		    		                                    </p>
+    		    		    		                                </div>
+    		    		    		                            </div>
+    		    		    		                        </div>
+    			<?php
+    		    		}
     public static function showHomeFooter() {
     	echo '<footer>';
     	echo '<p>&copy; Made by Gregory Hooks, Heather Voorhees, Travis Peterson, and Eric Applonie</p>';	
