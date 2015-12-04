@@ -234,7 +234,7 @@ $base = (array_key_exists('base', $_SESSION))?$_SESSION['base']:"";
     		                            <div class="thumbnail">
     		                                <img style="height: 200px; width: 250px" src="./images/<?php echo $item['mboardId']?>.png" alt="<?php echo 'Imagine a beautiful motherboard here';?>">
     		                                <!-- <div class="caption" style="height: 150px"> -->
-    		                                <div class="caption" style="height: 275px">
+    		                                <div class="caption" style="height: 285px">
     		                                    <h4 class="pull-right"><?php echo '$'.$item['price'];?></h4>
     		                                    <h4><a href="<?php echo "/" .$base. "/item/" . $item['mboardId'];?>"><?php echo $item['mboardId'];?></a>
     		                                    </h4>
