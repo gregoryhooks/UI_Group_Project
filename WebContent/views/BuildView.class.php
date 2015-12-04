@@ -13,6 +13,11 @@ class BuildView {
 			MasterView::showMotherBoard($part);
 		}
 		
+		/*$parts = PartsDB::getPartRowSetsByType("cpus");
+		foreach($parts as $part){
+			MasterView::showCPU($part);
+		}*/
+		
 		//echo '<h3><a href="/' . $_SESSION['base'] . '/tests">View Tests</a></h3>';
 		//echo '<h3><a href="/' . $_SESSION['base'] . '/TestpageView">View Test Page</a></h3>';
 		MasterView::showFooter();
