@@ -243,15 +243,19 @@ $base = (array_key_exists('base', $_SESSION))?$_SESSION['base']:"";
     		                                    <?php echo 'Processor: ';?>
     		                                    <?php
     		                                    if (substr($item['mboardId'], -1) == 'A') {
-    		                                    	echo '<img style="height: 50px; width: 50px; position: relative; left: 90px" src="./images/AMD_logo.png" alt="\'Imagine a CPU manufacture here\'">';
+    		                                    	echo '<img style="height: 50px; width: 50px; position: relative; left: 98px" src="./images/AMD_logo.png" alt="\'Imagine a CPU manufacture here\'">';
     		                                    }else{
-    		                                    	echo '<img style="height: 32px; width: 37px; position: relative; left: 95px" src="./images/Intel_logo.png" alt="\'Imagine a CPU manufacture here\'">';
+    		                                    	echo '<img style="height: 32px; width: 37px; position: relative; left: 103px" src="./images/Intel_logo.png" alt="\'Imagine a CPU manufacture here\'">';
     		                                    }
     		                                    ?>
-    		                                    <p><?php echo "Memory Type: ".$item['Memory Type'];?></p>
-    		                                    <p><?php echo "Memory Slots: ".$item['Memory Slots'];?></p>
-    		                                    <p><?php echo "Number of PCI Slots: ".$item['PCI Slots'];?></p>
-    		                                    <p><?php echo "USB Ports: ".$item['USB Ports'];?></p>
+    		                                    <p><?php echo "<div class=\"pull-right\">".$item['Memory Type']."</div>"; ?>
+    		                                    <?php echo "Memory Type: ";?></p>
+    		                                    <p><?php echo "<div class=\"pull-right\">".$item['Memory Slots']."</div>"; ?>
+    		                                    <?php echo "Memory Slots: ";?></p>
+    		                                    <p><?php echo "<div class=\"pull-right\">".$item['PCI Slots']."</div>"; ?>
+    		                                    <?php echo "Number of PCI Slots: ";?></p>
+    		                                    <p><?php echo "<div class=\"pull-right\">".$item['USB Ports']."</div>"; ?>
+    		                                    <?php echo "USB Ports: ";?></p>
     		                                </div>
     		                                
     		                                <div class="ratings">
