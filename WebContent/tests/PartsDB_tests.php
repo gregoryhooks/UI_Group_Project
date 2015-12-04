@@ -24,6 +24,16 @@ foreach ($parts as $part) {
 }
 ?>
 
+<h2>It should get all motherboards in the database</h2>
+<?php 
+$parts = PartsDB::getPartRowSetsByType("motherboards");
+echo "The motherboards in the database are:<br>";
+foreach ($parts as $part) {
+	print_r($part);
+	echo "<br>";
+}
+?>
+
 
 
 <h2>Query HardDrive Size By ID</h2>

@@ -8,7 +8,10 @@ class BuildView {
 		// Show the details of the form
 		MasterView::showCategories();
 
-		
+		$parts = PartsDB::getPartRowSetsByType("motherboards");
+		foreach($parts as $part){
+			MasterView::showMotherBoard($part);
+		}
 		
 		//echo '<h3><a href="/' . $_SESSION['base'] . '/tests">View Tests</a></h3>';
 		//echo '<h3><a href="/' . $_SESSION['base'] . '/TestpageView">View Test Page</a></h3>';
