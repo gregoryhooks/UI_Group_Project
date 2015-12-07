@@ -293,8 +293,8 @@ INSERT INTO `users` (`userID`, `username`, `password`, `email`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `usersaves` (
-  `userID` int(11) NOT NULL,
-  `partID` varchar(255) NOT NULL,
+  `userId` int(11) NOT NULL,
+  `buildId` varchar(255) NOT NULL,
   FOREIGN KEY (userID) REFERENCES users(userID)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 

@@ -213,7 +213,8 @@ $base = (array_key_exists('base', $_SESSION))?$_SESSION['base']:"";
                                 <img src="./images/<?php echo $item->getCaseId()?>.jpg" alt="<?php echo $item -> getImage();?>">
                                 <div class="caption" style="height: 285px;">
                                     <h4 class="pull-right"><?php echo '$'; printf("%0.2f",$price);?></h4>
-                                    <h4><a href="<?php echo "/" .$base. "/item/" . $item->getBuildId();?>"><?php echo $item->getBuildId();?></a>
+                                    <!-- <h4><a href="<?php //echo "/" .$base. "/item/" . $item->getBuildId();?>"><?php //echo $item->getBuildId();?></a> -->
+                                    <h4><a class="btn btn-primary btn-sm" href="<?php echo "/" .$base. "/save/" . $item->getBuildId();?>"><?php echo 'Save Build';?></a>
                                     </h4>
                                      <p><?php echo "<div class=\"pull-right\">".$cpu['Make']." ".$cpu['Model']." @ ".$cpu['Speed(GHz)']."GHz</div>"; ?>
     		                         <?php echo "CPU: ";?></p>
