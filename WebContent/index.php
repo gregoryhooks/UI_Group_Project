@@ -24,14 +24,17 @@
 			UserView::show();
 			break;
 		case "home":
+			if(is_null($_SESSION['user']))
+				homeView::show();
+			else
 				UserView::show();
 				break;
 		case "login":
 			LoginController::run();
 			break;
 		case "logout":
-			$_SESSION['user'] = false;
-			homeView::show(null);
+			$_SESSION['user'] = null;
+			homeView::show();
 			break;
 		case "user":
 			userviewController::run();
