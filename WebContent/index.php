@@ -11,7 +11,7 @@
 	 $_SESSION['action'] = $action;
 	 $_SESSION['arguments'] = $arguments;
 	 if (!isset($_SESSION['user']))
-	 	$_SESSION['user'] = false;
+	 	$_SESSION['user'] = null;
 	 
 	 
 	 	$answers = new Answers();
@@ -21,10 +21,11 @@
 	 
 	switch ($control) {
 		case "save":
-			if (!isset($_SESSION['user']))
-	 		echo "<br><br><br>Please Login";
-	 		homeView::show(null);
+			UserView::show();
 			break;
+		case "home":
+				UserView::show();
+				break;
 		case "login":
 			LoginController::run();
 			break;
@@ -41,6 +42,7 @@
 		case "yourpcs":
 			YourPCsController::run();
 			break;
+		case "questions":
 			QuestionsController::run();
 			break;
 		case "build":
