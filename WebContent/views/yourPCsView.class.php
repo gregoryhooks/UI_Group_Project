@@ -9,7 +9,7 @@ class yourPCsView {
 		foreach($usersaves as $build){
 			$cbuild = new preBuild(BuildsDB::getBuildRowSetsBy('buildID', $build['buildId'])[0]);
 			//print_r($cbuild);
-			MasterView::showItem($cbuild);
+			MasterView::showYourItem($cbuild);
 		}
 		MasterView::showFooter();
 	}

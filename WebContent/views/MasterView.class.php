@@ -251,6 +251,65 @@ $base = (array_key_exists('base', $_SESSION))?$_SESSION['base']:"";
                         </div>
                         
                        
+    	<?php
+    		}
+    	
+    	public static function showYourItem($item) {
+    		$base = (array_key_exists('base', $_SESSION))?$_SESSION['base']: NULL;
+    		
+    		$cpu = PartsDB::getPartRowSetsBy('cpus', 'cpuId', $item->getCpuId())[0];
+    		$gpu = PartsDB::getPartRowSetsBy('gpus', 'gpuId', $item->getGpuId())[0];
+    		$memory = PartsDB::getPartRowSetsBy('memory', 'ramId', $item->getRamId())[0];
+    		$hdd = PartsDB::getPartRowSetsBy('harddrives', 'hdriveId', $item->getHdriveId())[0];
+    		$motherboard = PartsDB::getPartRowSetsBy('motherboards', 'mboardId', $item->getMboardId())[0];
+    		$psu = PartsDB::getPartRowSetsBy('psupplies', 'psupplyId', $item->getPowersupId())[0];
+    		
+    		$price = $cpu['Price'] + $gpu['price'] + $memory['price'] + $hdd['price'] + $motherboard['price'] + $psu['price'];
+    		
+    		?>
+    				<div class="col-sm-4 col-lg-4 col-md-4">
+                            <div class="thumbnail" style="width: 250px;">
+                                <img src="./images/<?php echo $item->getCaseId()?>.jpg" alt="<?php echo $item -> getImage();?>">
+                                <div class="caption" style="height: 285px;">
+                                    <h4 class="pull-right"><?php echo '$'; printf("%0.2f",$price);?></h4>
+                                    <!-- <h4><a href="<?php //echo "/" .$base. "/item/" . $item->getBuildId();?>"><?php //echo $item->getBuildId();?></a> -->
+                                    <h4><a class="btn btn-primary btn-sm" href="<?php echo "/" .$base. "/remove/" . $item->getBuildId();?>"><?php echo 'Remove Build';?></a>
+                                    </h4>
+                                     <p><?php echo "<div class=\"pull-right\">".$cpu['Make']." ".$cpu['Model']." @ ".$cpu['Speed(GHz)']."GHz</div>"; ?>
+    		                         <?php echo "CPU: ";?></p>
+    		                         <p><?php echo "<div class=\"pull-right\">".$gpu['Make']." ".$gpu['Model']." @ ".($gpu['Speed(GHz)'] * 1000)."MHz</div>"; ?>
+    		                         <?php echo "GPU: ";?></p>
+    		                         <p><?php echo "<div class=\"pull-right\">".$memory['Size(GB)']." ".$memory['Type']."</div>"; ?>
+    		                         <?php echo "Memory: ";?></p>
+    		                         <p><?php echo "<div class=\"pull-right\">".$hdd['Size']." "; if($hdd['Speed'] != 0){echo "HDD @ ".$hdd['Speed']."RPM";}else{"SSD";} echo"</div>"; ?>
+    		                         <?php echo "Storage: ";?></p>
+    		                         <p><?php echo "<div class=\"pull-right\">".$motherboard['Model']."</div>"; ?>
+    		                         <?php echo "MBoard: ";?></p>
+    		                         <p><?php echo "<div class=\"pull-right\">".$psu['Make']." ".$psu['Watts']."W </div>"; ?>
+    		                         <?php echo "Power Supply: ";?></p>
+    		                         <?php echo 'Powered By: ';?>
+    		                         <?php
+    		                             if (substr($motherboard['mboardId'], -1) == 'A') {
+    		                                 echo '<img style="height: 50px; width: 50px; position: relative; left: 98px" src="./images/AMD_logo.png" alt="\'Imagine a CPU manufacture here\'">';
+    		                             }else{
+    		                                 echo '<img style="height: 32px; width: 37px; position: relative; left: 103px" src="./images/Intel_logo.png" alt="\'Imagine a CPU manufacture here\'">';
+    		                             }
+    		                         ?>
+                                </div>
+                                <div class="ratings">
+                                    <p class="pull-right">12 reviews</p>
+                                    <p>
+                                        <span class="glyphicon glyphicon-star"></span>
+                                        <span class="glyphicon glyphicon-star"></span>
+                                        <span class="glyphicon glyphicon-star"></span>
+                                        <span class="glyphicon glyphicon-star"></span>
+                                        <span class="glyphicon glyphicon-star-empty"></span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                       
     	
     	<?php
     		}

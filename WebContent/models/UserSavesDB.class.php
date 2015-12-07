@@ -36,7 +36,7 @@ class UserSavesDB {
 		$query = "DELETE FROM usersaves WHERE `userId`=:userId AND `buildId`=:buildId";
 		$returnId = 0;
 		try {
-			if (is_null($userId) || $userId < 1 || is_null($buildId) || $buildId < 1)
+			if (is_null($userId) || $userId < 1 || is_null($buildId))
 				throw new PDOException("Invalid UserSave entry can't be removed");
 			$db = Database::getDB ();
 			$statement = $db->prepare ($query);

@@ -27,6 +27,13 @@
 			//print_r($_SESSION['user']);
 			header('Location: /'.$_SESSION['base'].'/home');
 			break;
+		case "remove":
+			UserSavesDB::removeUserSave($_SESSION['user']->getUserId(), $_SESSION['action']);
+			//echo '<br><br><br><br><br><br><br><br>';
+			//echo $_SESSION['user']->getUserId();
+			//print_r($_SESSION['user']);
+			header('Location: /'.$_SESSION['base'].'/yourpcs');
+			break;
 		case "home":
 			if(is_null($_SESSION['user']))
 				homeView::show();
@@ -59,7 +66,11 @@
 			PrebuiltController::run();
 			break;
 		default:
-			homeView::show(null);
+			if(is_null($_SESSION['user']))
+				homeView::show();
+			else
+				UserView::show();
+				break;
 	};
 	ob_end_flush();
 ?>
