@@ -21,7 +21,7 @@ class homeView {
     		echo '<div class="row">';
     			echo '<p><img src ="/'.$base.'/images/Logo.png"></p>';
   				echo '<p>The place where you can find the Perfect PC</p>';
-				echo '<p><a class="btn btn-primary btn-lg" href="/'.$base.'/questions" role="button">Try it out! &raquo;</a></p>';
+			//	echo '<p><a class="btn btn-primary btn-lg" href="/'.$base.'/questions" role="button">Try it out! &raquo;</a></p>';
       		echo '</div>';
 	  	echo '</div>';
     echo '</div>';

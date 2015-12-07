@@ -37,7 +37,7 @@ class MasterView {
     					</div>
     				
     				<form class="navbar-form navbar-right" action ="user" method = "Post">
-    		            <a class="btn btn-primary" href="<?php echo "/" .$base. "/user/logout"?>" role="button">Log Out</a>
+    		            <a class="btn btn-primary" href="<?php echo "/" .$base. "/logout"?>" role="button">Log Out</a>
     		          </form>
     		          </nav>
     			

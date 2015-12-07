@@ -5,7 +5,6 @@ class User {
 	private $formInput;
 	private $username;
 	private $password;
-	private $userId;
 	public $email;
 	
 	public function __construct($formInput = null) {
@@ -41,10 +40,6 @@ class User {
 	
 	public function getPassword() {
 		return $this->password;
-	}
-	
-	public function getUserId() {
-		return $this->userId;
 	}
 	
 	public function getEmail() {

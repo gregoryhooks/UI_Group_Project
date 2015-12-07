@@ -10,6 +10,8 @@
 	 $_SESSION['control'] = $control; 
 	 $_SESSION['action'] = $action;
 	 $_SESSION['arguments'] = $arguments;
+	 if (!isset($_SESSION['user']))
+	 	$_SESSION['user'] = false;
 	 
 	 
 	 	$answers = new Answers();
@@ -18,8 +20,17 @@
 	 	$_SESSION['answers'] = $answers;
 	 
 	switch ($control) {
+		case "save":
+			if (!isset($_SESSION['user']))
+	 		echo "<br><br><br>Please Login";
+	 		homeView::show(null);
+			break;
 		case "login":
-			UserView::show();
+			LoginController::run();
+			break;
+		case "logout":
+			$_SESSION['user'] = false;
+			homeView::show(null);
 			break;
 		case "user":
 			userviewController::run();
@@ -30,7 +41,6 @@
 		case "yourpcs":
 			YourPCsController::run();
 			break;
-		case "questions":
 			QuestionsController::run();
 			break;
 		case "build":
