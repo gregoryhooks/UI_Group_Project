@@ -46,7 +46,7 @@ class questions {
 		echo '<form method="Post" action="/'.$base.'/questions/question4">';
 		echo '<input type ="radio" name="game" value="g1" checked> None or flash games online like farmville<br>';
 		echo '<input type ="radio" name="game" value="g2"> Older games like ARMA 2 and Counter-Strike<br>';
-		echo '<input type ="radio" name="game" value="g3"> Low graphic intesive newer games like WOW<br>';
+		echo '<input type ="radio" name="game" value="g3"> Low graphic intensive newer games like WOW<br>';
 		echo '<input type ="radio" name="game" value="g4"> Newer games with medium graphics on medium settings<br>';
 		echo '<input type ="radio" name="game" value="g5"> High graphic intesive games like ARMA 3 on lower settings<br>';
 		echo '<input type ="radio" name="game" value="g6"> High graphics on high settings, I want Witcher 3 to look realistic!<br><br>';
@@ -78,9 +78,9 @@ class questions {
 		echo '<form method="Post" action="/'.$base.'/questions/question6">';
 		echo '<input type ="radio" name="mem" value="m1" checked> You can run more than one?!<br>';
 		echo '<input type ="radio" name="mem" value="m2"> Browse the internet while using documetns<br>';
-		echo '<input type ="radio" name="mem" value="m3"> Musics going, internets up, editing photos<br>';
-		echo '<input type ="radio" name="mem" value="m4"> I never shut down programs, like a should...I am sorry<br>';
-		echo '<input type ="radio" name="mem" value="m5"> Write and complie extensive code while watching my illegally downloaded...church videos<br>';
+		echo '<input type ="radio" name="mem" value="m3"> Music is on, internets running, editing photos at the same time<br>';
+		echo '<input type ="radio" name="mem" value="m4"> I never shut down programs, like I should...I am sorry<br>';
+		echo '<input type ="radio" name="mem" value="m5"> Write and compile extensive code while watching my illegally downloaded...church videos<br>';
 		echo '<input type ="radio" name="mem" value="m6"> Live stream games while video broadcasting to friends<br><br>';
 		echo '<div><input type="submit" value="Next" /></div>';
 		echo '</form>';
