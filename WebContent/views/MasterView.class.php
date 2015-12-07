@@ -210,7 +210,7 @@ $base = (array_key_exists('base', $_SESSION))?$_SESSION['base']:"";
     		?>
     				<div class="col-sm-4 col-lg-4 col-md-4">
                             <div class="thumbnail" style="width: 250px;">
-                                <img src="./images/<?php echo $item->getCaseId()?>.jpg" alt="<?php echo $item -> getImage();?>">
+                                <img src="/<?php echo $base;?>/images/<?php echo $item->getCaseId()?>.jpg" alt="<?php echo $item -> getImage();?>">
                                 <div class="caption" style="height: 285px;">
                                     <h4 class="pull-right"><?php echo '$'; printf("%0.2f",$price);?></h4>
                                     <!-- <h4><a href="<?php //echo "/" .$base. "/item/" . $item->getBuildId();?>"><?php //echo $item->getBuildId();?></a> -->
@@ -231,9 +231,9 @@ $base = (array_key_exists('base', $_SESSION))?$_SESSION['base']:"";
     		                         <?php echo 'Powered By: ';?>
     		                         <?php
     		                             if (substr($motherboard['mboardId'], -1) == 'A') {
-    		                                 echo '<img style="height: 50px; width: 50px; position: relative; left: 98px" src="./images/AMD_logo.png" alt="\'Imagine a CPU manufacture here\'">';
+    		                                 echo '<img style="height: 50px; width: 50px; position: relative; left: 98px" src="/'.$base.'/images/AMD_logo.png" alt="\'Imagine a CPU manufacture here\'">';
     		                             }else{
-    		                                 echo '<img style="height: 32px; width: 37px; position: relative; left: 103px" src="./images/Intel_logo.png" alt="\'Imagine a CPU manufacture here\'">';
+    		                                 echo '<img style="height: 32px; width: 37px; position: relative; left: 103px" src="'.$base.'/images/Intel_logo.png" alt="\'Imagine a CPU manufacture here\'">';
     		                             }
     		                         ?>
                                 </div>
@@ -261,11 +261,11 @@ $base = (array_key_exists('base', $_SESSION))?$_SESSION['base']:"";
     			?>
     		    				<div class="col-sm-4 col-lg-4 col-md-4">
     		                            <div class="thumbnail">
-    		                                <img style="height: 200px; width: 250px" src="./images/<?php echo $item['mboardId']?>.png" alt="<?php echo 'Imagine a beautiful motherboard here';?>">
+    		                                <img style="height: 200px; width: 250px" src="/<?php echo $base;?>/images/<?php echo $item['mboardId']?>.png" alt="<?php echo 'Imagine a beautiful motherboard here';?>">
     		                                <!-- <div class="caption" style="height: 150px"> -->
     		                                <div class="caption" style="height: 285px">
     		                                    <h4 class="pull-right"><?php echo '$'; printf("%0.2f",$item['price']);?></h4>
-    		                                    <h4><a href="<?php echo "/" .$base. "/item/" . $item['mboardId'];?>"><?php echo $item['mboardId'];?></a>
+    		                                    <h4><a href="<?php echo "/" .$base. "/build/cpu/" . $item['mboardId'];?>"><?php echo $item['mboardId'];?></a>
     		                                    </h4>
     		                                    <p><?php echo "<div class=\"pull-right\">".$item['Make']."</div>"; ?>
     		                                    <?php echo "Brand: ";?></p>
@@ -274,9 +274,9 @@ $base = (array_key_exists('base', $_SESSION))?$_SESSION['base']:"";
     		                                    <?php echo 'Processor: ';?>
     		                                    <?php
     		                                    if (substr($item['mboardId'], -1) == 'A') {
-    		                                    	echo '<img style="height: 50px; width: 50px; position: relative; left: 98px" src="./images/AMD_logo.png" alt="\'Imagine a CPU manufacture here\'">';
+    		                                    	echo '<img style="height: 50px; width: 50px; position: relative; left: 98px" src="/'.$base.'/images/AMD_logo.png" alt="\'Imagine a CPU manufacture here\'">';
     		                                    }else{
-    		                                    	echo '<img style="height: 32px; width: 37px; position: relative; left: 103px" src="./images/Intel_logo.png" alt="\'Imagine a CPU manufacture here\'">';
+    		                                    	echo '<img style="height: 32px; width: 37px; position: relative; left: 103px" src="/'.$base.'/images/Intel_logo.png" alt="\'Imagine a CPU manufacture here\'">';
     		                                    }
     		                                    ?>
     		                                    <p><?php echo "<div class=\"pull-right\">".$item['Memory Type']."</div>"; ?>
@@ -313,18 +313,18 @@ $base = (array_key_exists('base', $_SESSION))?$_SESSION['base']:"";
     		    			?>
     		    		    		    				<div class="col-sm-4 col-lg-4 col-md-4">
     		    		    		                            <div class="thumbnail">
-    		    		    		                                <img style="height: 200px; width: 250px" src="./images/<?php echo $item['cpuId']?>.jpg" alt="<?php echo 'Imagine a beautiful cpu box here';?>">
+    		    		    		                                <img style="height: 200px; width: 250px" src="/<?php echo $base;?>/images/<?php echo $item['cpuId']?>.jpg" alt="<?php echo 'Imagine a beautiful cpu box here';?>">
     		    		    		                                <!-- <div class="caption" style="height: 150px"> -->
     		    		    		                                <div class="caption" style="height: 175px">
     		    		    		                                    <h4 class="pull-right"><?php echo '$'; printf("%0.2f",$item['Price']);?></h4>
-    		    		    		                                    <h4><a href="<?php echo "/" .$base. "/item/" . $item['cpuId'];?>"><?php echo $item['cpuId'];?></a>
+    		    		    		                                    <h4><a href="<?php echo "/" .$base. "/build/memory/" . $item['cpuId'];?>"><?php echo $item['cpuId'];?></a>
     		    		    		                                    </h4>
     		    		    		                                    <?php echo 'Brand: ';?>
     		    		    		                                    <?php
     		    		    		                                    if (substr($item['cpuId'], -3, -2) == 'A') { 
-    		    		    		                                    	echo '<img style="height: 50px; width: 50px; position: relative; left: 131px" src="./images/AMD_logo.png" alt="\'Imagine a CPU manufacture here\'">';
+    		    		    		                                    	echo '<img style="height: 50px; width: 50px; position: relative; left: 131px" src="/'.$base.'/images/AMD_logo.png" alt="\'Imagine a CPU manufacture here\'">';
 						    		                                    }else{
-						    		                                    	echo '<img style="height: 32px; width: 37px; position: relative; left: 136px" src="./images/Intel_logo.png" alt="\'Imagine a CPU manufacture here\'">';
+						    		                                    	echo '<img style="height: 32px; width: 37px; position: relative; left: 136px" src="/'.$base.'/images/Intel_logo.png" alt="\'Imagine a CPU manufacture here\'">';
 						    		                                    }
     		    		    		                                    ?>
     		    		    		                                    <p><?php echo "<div class=\"pull-right\">".$item['Model']."</div>"; ?>
@@ -356,11 +356,11 @@ $base = (array_key_exists('base', $_SESSION))?$_SESSION['base']:"";
     		    		    		    			?>
     		    		    		    		    		    		    		    				<div class="col-sm-4 col-lg-4 col-md-4">
     		    		    		    		    		    		    		                            <div class="thumbnail">
-    		    		    		    		    		    		    		                                <img style="height: 200px; width: 250px" src="./images/<?php echo $item['ramId']?>.jpg" alt="<?php echo 'Imagine a beautiful memory box here';?>">
+    		    		    		    		    		    		    		                                <img style="height: 200px; width: 250px" src="/<?php echo $base;?>/images/<?php echo $item['ramId']?>.jpg" alt="<?php echo 'Imagine a beautiful memory box here';?>">
     		    		    		    		    		    		    		                                <!-- <div class="caption" style="height: 150px"> -->
     		    		    		    		    		    		    		                                <div class="caption" style="height: 175px">
     		    		    		    		    		    		    		                                    <h4 class="pull-right"><?php echo '$'; printf("%0.2f",$item['price']);?></h4>
-    		    		    		    		    		    		    		                                    <h4><a href="<?php echo "/" .$base. "/item/" . $item['ramId'];?>"><?php echo $item['ramId'];?></a>
+    		    		    		    		    		    		    		                                    <h4><a href="<?php echo "/" .$base. "/build/gpu/" . $item['ramId'];?>"><?php echo $item['ramId'];?></a>
     		    		    		    		    		    		    		                                    </h4>
     		    		    		    		    		    		    		                                    <p><?php echo "<div class=\"pull-right\">".$item['Make']."</div>"; ?>
     		    		    		    		    		                                    						<?php echo "Brand: ";?></p>
@@ -395,11 +395,11 @@ $base = (array_key_exists('base', $_SESSION))?$_SESSION['base']:"";
     		    		    		    		    		    		    		    			?>
     		    		    		    		    		    		    		    		    		    		    		    		    		    		    		    				<div class="col-sm-4 col-lg-4 col-md-4">
     		    		    		    		    		    		    		    		    		    		    		    		    		    		    		                            <div class="thumbnail">
-    		    		    		    		    		    		    		    		    		    		    		    		    		    		    		                                <img style="height: 200px; width: 250px" src="./images/<?php echo $item['gpuId']?>.jpg" alt="<?php echo 'Imagine a beautiful gpu here';?>">
+    		    		    		    		    		    		    		    		    		    		    		    		    		    		    		                                <img style="height: 200px; width: 250px" src="/<?php echo $base;?>/images/<?php echo $item['gpuId']?>.jpg" alt="<?php echo 'Imagine a beautiful gpu here';?>">
     		    		    		    		    		    		    		    		    		    		    		    		    		    		    		                                <!-- <div class="caption" style="height: 150px"> -->
     		    		    		    		    		    		    		    		    		    		    		    		    		    		    		                                <div class="caption" style="height: 175px">
     		    		    		    		    		    		    		    		    		    		    		    		    		    		    		                                    <h4 class="pull-right"><?php echo '$'; printf("%0.2f",$item['price']);?></h4>
-    		    		    		    		    		    		    		    		    		    		    		    		    		    		    		                                    <h4><a href="<?php echo "/" .$base. "/item/" . $item['gpuId'];?>"><?php echo $item['gpuId'];?></a>
+    		    		    		    		    		    		    		    		    		    		    		    		    		    		    		                                    <h4><a href="<?php echo "/" .$base. "/build/harddrive/" . $item['gpuId'];?>"><?php echo $item['gpuId'];?></a>
     		    		    		    		    		    		    		    		    		    		    		    		    		    		    		                                    </h4>
     		    		    		    		    		    		    		    		    		    		    		    		    		    		    		                                    <p><?php echo "<div class=\"pull-right\">".$item['Make']."</div>"; ?>
     		    		    		    		    		    		    		    		    		    		    		    		    		                                    						<?php echo "Brand: ";?></p>
@@ -433,11 +433,11 @@ $base = (array_key_exists('base', $_SESSION))?$_SESSION['base']:"";
     			?>
     		    				<div class="col-sm-4 col-lg-4 col-md-4">
     		                            <div class="thumbnail">
-    		                                <img style="height: 200px; width: 250px" src="./images/<?php echo $item['hdriveId']?>.jpg" alt="<?php echo 'Imagine a beautiful hard drive here';?>">
+    		                                <img style="height: 200px; width: 250px" src="/<?php echo $base;?>/images/<?php echo $item['hdriveId']?>.jpg" alt="<?php echo 'Imagine a beautiful hard drive here';?>">
     		                                <!-- <div class="caption" style="height: 150px"> -->
     		                                <div class="caption" style="height: 175px">
     		                                    <h4 class="pull-right"><?php echo '$'; printf("%0.2f",$item['price']);?></h4>
-    		                                    <h4><a href="<?php echo "/" .$base. "/item/" . $item['hdriveId'];?>"><?php echo $item['hdriveId'];?></a>
+    		                                    <h4><a href="<?php echo "/" .$base. "/build/powersupply/" . $item['hdriveId'];?>"><?php echo $item['hdriveId'];?></a>
     		                                    </h4>
     		                                    <p><?php echo "<div class=\"pull-right\">".$item['Make']."</div>"; ?>
     		                                    <?php echo "Brand: ";?></p>
@@ -471,11 +471,11 @@ $base = (array_key_exists('base', $_SESSION))?$_SESSION['base']:"";
     			?>
     		    				<div class="col-sm-4 col-lg-4 col-md-4">
     		                            <div class="thumbnail">
-    		                                <img style="height: 200px; width: 250px" src="./images/<?php echo $item['psupplyId']?>.jpg" alt="<?php echo 'Imagine a beautiful power supply here';?>">
+    		                                <img style="height: 200px; width: 250px" src="/<?php echo $base;?>/images/<?php echo $item['psupplyId']?>.jpg" alt="<?php echo 'Imagine a beautiful power supply here';?>">
     		                                <!-- <div class="caption" style="height: 150px"> -->
     		                                <div class="caption" style="height: 140px">
     		                                    <h4 class="pull-right"><?php echo '$'; printf("%0.2f",$item['price']);?></h4>
-    		                                    <h4><a href="<?php echo "/" .$base. "/item/" . $item['psupplyId'];?>"><?php echo $item['psupplyId'];?></a>
+    		                                    <h4><a href="<?php echo "/" .$base. "/build/case/" . $item['psupplyId'];?>"><?php echo $item['psupplyId'];?></a>
     		                                    </h4>
     		                                    <p><?php echo "<div class=\"pull-right\">".$item['Make']."</div>"; ?>
     		                                    <?php echo "Brand: ";?></p>
@@ -508,11 +508,11 @@ $base = (array_key_exists('base', $_SESSION))?$_SESSION['base']:"";
     		    			?>
     		    		    		    				<div class="col-sm-4 col-lg-4 col-md-4">
     		    		    		                            <div class="thumbnail">
-    		    		    		                                <img src="./images/<?php echo $item['caseId']?>.jpg" alt="<?php echo 'Imagine a beautiful case here';?>">
+    		    		    		                                <img src="/<?php echo $base;?>/images/<?php echo $item['caseId']?>.jpg" alt="<?php echo 'Imagine a beautiful case here';?>">
     		    		    		                                <!-- <div class="caption" style="height: 150px"> -->
     		    		    		                                <div class="caption" style="height: 195px">
     		    		    		                                    <h4 class="pull-right"><?php echo '$'; printf("%0.2f",$item['Price']);?></h4>
-    		    		    		                                    <h4><a href="<?php echo "/" .$base. "/item/" . $item['caseId'];?>"><?php echo $item['caseId'];?></a>
+    		    		    		                                    <h4><a href="<?php echo "/" .$base. "/build/finish/" . $item['caseId'];?>"><?php echo $item['caseId'];?></a>
     		    		    		                                    </h4>
     		    		    		                                    <p><?php echo "<div class=\"pull-right\">".$item['Make']."</div>"; ?>
     		    		    		                                    <?php echo "Brand: ";?></p>
