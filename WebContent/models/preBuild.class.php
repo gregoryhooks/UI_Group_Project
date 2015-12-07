@@ -9,6 +9,7 @@ class preBuild{
 	private $gpuId;
 	private $mboardId;
 	private $image;
+	private $powersupId;
 	
 	
 	public function __construct($formInput = null) {
@@ -101,7 +102,7 @@ public function getParameters() {
 		   $this->ramId = $this->extractForm('ramId');
 		   $this->gpuId= $this->extractForm('gpuId');
 		   $this->mboardId= $this->extractForm('mboardId');
-		   $this->powersupId= $this->extractForm('powersupID');
+		   $this->powersupId= $this->extractForm('powersupId');
 		   $this->image= $this->extractForm('image');
 		}
 	}

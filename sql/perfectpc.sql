@@ -130,7 +130,7 @@ CREATE TABLE IF NOT EXISTS `gpus` (
 --
 
 INSERT INTO `gpus` (`gpuId`, `Make`, `Model`, `Speed(GHz)`, `Memory(GB)`, `price`) VALUES
-('1gpuPG06', 'PNY', '210', 0, 1, 38.99),
+('1gpuPG06', 'PNY', '210', 0.52, 1, 38.99),
 ('2gpuMG07', 'MSI', 'GT610', 0.81, 2, 46.99),
 ('4gpuPV09', 'PNY', '410', 0.5, 1, 119.99),
 ('5gpuGG04', 'Gigabyte', 'GTX750', 1.033, 2, 134.99),
@@ -228,7 +228,7 @@ INSERT INTO `motherboards` (`mboardId`, `Make`, `Model`, `PCI Slots`, `Memory Ty
 ('4mb05A', 'ASUS', 'A68HM-K', 2, 'DDR3', 2, 4, 54.99),
 ('6mb00I', 'Gigabyte', 'GA-Z170-HD3P', 3, 'DDR4', 4, 4, 124.99),
 ('6mb01I', 'ASUS', 'Z170-A LGA 1151', 2, 'DDR4', 3, 6, 154.99),
-('6MB02A', 'ASUS', 'ROG CROSSBLADE RANGER', 3, 'DDR3', 4, 6, 152.99),
+('6MB02A', 'ASUS', 'CROSSBLADE RANGER', 3, 'DDR3', 4, 6, 152.99),
 ('8mb08A', 'ASUS', 'Crosshair', 3, 'DDR3', 4, 8, 220.94),
 ('8mb09I', 'ASUS', 'Q87M-E', 2, 'DDR3', 4, 6, 1299.99),
 ('9mb07I', 'ASRock', 'WS-E/10G', 7, 'DDR4', 4, 8, 649.74);
