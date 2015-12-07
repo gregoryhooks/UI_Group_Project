@@ -7,7 +7,7 @@ class UserSavesDB {
 		                      VALUES(:userId, :buildId)";
 		$returnId = 0;
 		try {
-			if (is_null($userId) || $userId < 1 || is_null($buildId) || $buildId < 1)
+			if (is_null($userId) || $userId < 1 || is_null($buildId))
 				throw new PDOException("Invalid UserSave entry can't be inserted");
 			$userSaves = UserSavesDB::getUserSavesBy('userId', $userId);
 			if (!is_null($userSaves) && !empty($userSaves)){

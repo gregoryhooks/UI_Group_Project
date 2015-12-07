@@ -5,6 +5,7 @@ class User {
 	private $formInput;
 	private $username;
 	private $password;
+	private $userId;
 	public $email;
 	
 	public function __construct($formInput = null) {
@@ -52,6 +53,10 @@ class User {
 		return $paramArray;
 	}
 	
+	public function getUserId() {
+		return $this->userId;
+	}
+	
 	public function setUserId($id) {
 		// Set the value of the userId to $id
 		$this->userId = $id;
@@ -82,6 +87,7 @@ class User {
 		   $this->validateUserName();
 		   $this->validatePassword();
 		   $this->validateEmail();
+		   $this->validateUserId();
 	}
 
 	private function initializeEmpty() {
@@ -117,6 +123,10 @@ class User {
 		if (!filter_var($this->email, FILTER_VALIDATE_EMAIL)) {
 			$this->setError('email', 'EMAIL_INVALID');
 		}
+	}
+	
+	private function validateUserId() {
+		$this->userId = $this->extractForm('userID');
 	}
 }
 ?>

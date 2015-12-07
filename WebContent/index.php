@@ -21,7 +21,11 @@
 	 
 	switch ($control) {
 		case "save":
-			UserView::show();
+			UserSavesDB::addUserSave($_SESSION['user']->getUserId(), $_SESSION['action']);
+			//echo '<br><br><br><br><br><br><br><br>';
+			//echo $_SESSION['user']->getUserId();
+			//print_r($_SESSION['user']);
+			header('Location: /'.$_SESSION['base'].'/home');
 			break;
 		case "home":
 			if(is_null($_SESSION['user']))
