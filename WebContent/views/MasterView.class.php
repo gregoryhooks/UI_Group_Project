@@ -233,7 +233,7 @@ $base = (array_key_exists('base', $_SESSION))?$_SESSION['base']:"";
     		                             if (substr($motherboard['mboardId'], -1) == 'A') {
     		                                 echo '<img style="height: 50px; width: 50px; position: relative; left: 98px" src="/'.$base.'/images/AMD_logo.png" alt="\'Imagine a CPU manufacture here\'">';
     		                             }else{
-    		                                 echo '<img style="height: 32px; width: 37px; position: relative; left: 103px" src="'.$base.'/images/Intel_logo.png" alt="\'Imagine a CPU manufacture here\'">';
+    		                                 echo '<img style="height: 32px; width: 37px; position: relative; left: 103px" src="/'.$base.'/images/Intel_logo.png" alt="\'Imagine a CPU manufacture here\'">';
     		                             }
     		                         ?>
                                 </div>
