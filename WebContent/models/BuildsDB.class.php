@@ -152,10 +152,10 @@ public static function getRandomBuild() {
 		return $returnId;
 	}*/
 
-	/*public static function getBuildRowSetsBy($type = null, $value = null) {
+	public static function getBuildRowSetsBy($type = null, $value = null) {
 	
 		// Returns the rows of Users whose $type field has value $value
-		$allowedTypes = ["userID", "username"];
+		$allowedTypes = ["buildID"];
 		$userRowSets = NULL;
 		try {
 			$db = Database::getDB ();
@@ -175,7 +175,7 @@ public static function getRandomBuild() {
 			echo "<p>Error getting user rows by $type: " . $e->getMessage () . "</p>";
 		}
 		return $userRowSets;
-	}*/
+	}
 	
 	/*public static function getBuildsArray($rowSets) {
 		// Returns an array of User objects extracted from $rowSets
