@@ -104,6 +104,8 @@ class QuestionsController {
 					$builds = BuildsDB::getBuildsWith($answers->getBudget(), $answers->getPurpose(), $answers->getGame(),$answers->getStorage(), $answers->getMem(), $answers->getCasecolor());
 					
 					foreach($builds as $build){
+						$user = (array_key_exists('user', $_SESSION))?$_SESSION['user']:null;
+						$base = (array_key_exists('base', $_SESSION))? $_SESSION['base']: "";
 						//print_r($build);
 						
 						
@@ -137,6 +139,8 @@ class QuestionsController {
 
 					}
 					echo '<img src="../images/'.$answers->getCasecolor() . '.jpg" alt="userImage"> <br>';
+					echo '<p><a class="btn btn-primary btn-lg" href="/'.$base.'/save" role="button">Save &raquo;</a></p>';
+						
 					
 					echo '</div>';
 				echo '</div>';

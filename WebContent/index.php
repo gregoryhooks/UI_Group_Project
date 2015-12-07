@@ -20,6 +20,11 @@
 	 	$_SESSION['answers'] = $answers;
 	 
 	switch ($control) {
+		case "save":
+			if (!isset($_SESSION['user']))
+	 		echo "<br><br><br>Please Login";
+	 		homeView::show(null);
+			break;
 		case "login":
 			LoginController::run();
 			break;
@@ -36,7 +41,6 @@
 		case "yourpcs":
 			YourPCsController::run();
 			break;
-		case "questions":
 			QuestionsController::run();
 			break;
 		case "build":
