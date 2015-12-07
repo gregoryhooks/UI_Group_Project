@@ -10,6 +10,8 @@
 	 $_SESSION['control'] = $control; 
 	 $_SESSION['action'] = $action;
 	 $_SESSION['arguments'] = $arguments;
+	 if (!isset($_SESSION['user']))
+	 	$_SESSION['user'] = false;
 	 
 	 
 	 	$answers = new Answers();
@@ -19,7 +21,11 @@
 	 
 	switch ($control) {
 		case "login":
-			UserView::show();
+			LoginController::run();
+			break;
+		case "logout":
+			$_SESSION['user'] = false;
+			homeView::show(null);
 			break;
 		case "user":
 			userviewController::run();
