@@ -138,8 +138,11 @@ class QuestionsController {
 						echo $part[0]['Make']." ".$part[0]['Model']." ".$part[0]['Watts']." Watts $".$part[0]['price']."<br>";
 
 					}
+					
+					//echo "<br>Total Price: $".$price;
+					
 					echo '<img src="../images/'.$answers->getCasecolor() . '.jpg" alt="userImage"> <br>';
-					echo '<p><a class="btn btn-primary btn-lg" href="/'.$base.'/save" role="button">Save &raquo;</a></p>';
+					echo '<p><a class="btn btn-primary btn-lg" href="/'.$base.'/save/'.$build['buildId'].'" role="button">Save &raquo;</a></p>';
 						
 					
 					echo '</div>';
